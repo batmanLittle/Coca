@@ -1,12 +1,22 @@
 import "./App.css";
-import Header from "../Header/Header";
+import { Routes, Route } from "react-router-dom";
 import DigitalInfo from "../DigitalInfo/DigitalInfo";
+import Main from "../Main/Main";
 
 function App() {
   return (
     <div className="app">
-      <Header />
-      <DigitalInfo />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <DigitalInfo />
+              <Main />
+            </>
+          }
+        />
+      </Routes>
     </div>
   );
 }
