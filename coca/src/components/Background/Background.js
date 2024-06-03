@@ -1,6 +1,6 @@
 import "./Background.css";
 import orange from "../../images/bacground-orange.png";
-import green from "../../images/bacground-green.png";
+import green from "../../images/bacgroung-green.png";
 
 function Background() {
   return (
