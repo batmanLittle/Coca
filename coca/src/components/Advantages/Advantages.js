@@ -2,12 +2,46 @@ import "./Advantages.css";
 import imageWork from "../../images/advantages-image.png";
 import icon from "../../images/advantages-icon.png";
 import imageGraphs from "../../images/advantages-graphs.svg";
+import useCustomAnimation from "../../hooks/useScrollAnimation";
+import { animated } from "react-spring";
 
 function Advantages() {
+  const imgAnimation = useCustomAnimation({
+    from: { transform: "translateX(-50%)", opacity: "0" },
+    to: { transform: "translateX(0%)", opacity: "1" },
+    delay: 100,
+    duration: 600,
+    id: "advantages",
+  });
+
+  const titleAnimation = useCustomAnimation({
+    from: { transform: "translateX(50%)", opacity: "0" },
+    to: { transform: "translateX(0%)", opacity: "1" },
+    delay: 1200,
+    duration: 600,
+    id: "advantages",
+  });
+
+  const subtitleAnimation = useCustomAnimation({
+    from: { transform: "translateX(50%)", opacity: "0" },
+    to: { transform: "translateX(0%)", opacity: "1" },
+    delay: 900,
+    duration: 600,
+    id: "advantages",
+  });
+
+  const listAnimation = useCustomAnimation({
+    from: { transform: "translateX(50%)", opacity: "0" },
+    to: { transform: "translateX(0%)", opacity: "1" },
+    delay: 500,
+    duration: 600,
+    id: "advantages",
+  });
+
   return (
-    <section className="advantages">
+    <section className="advantages" id="advantages">
       <div className="advantages__container">
-        <div className="advantages__img">
+        <animated.div className="advantages__img" style={imgAnimation}>
           <img
             src={imageWork}
             alt="working on a laptop"
@@ -18,18 +52,24 @@ function Advantages() {
             alt="graphs"
             className="advantages__img-graphs"
           />
-        </div>
+        </animated.div>
         <div className="advantages__info">
           <div className="advantages__heading">
-            <h2 className="advantages__heading-title">
+            <animated.h2
+              className="advantages__heading-title"
+              style={titleAnimation}
+            >
               Passion to increase company revenue up to 85%
-            </h2>
-            <p className="advantages__heading-subtitle">
+            </animated.h2>
+            <animated.p
+              className="advantages__heading-subtitle"
+              style={subtitleAnimation}
+            >
               Automate your sales, marketing and service in one platform. Avoid
               date leaks and enable consistent messaging
-            </p>
+            </animated.p>
           </div>
-          <ul className="advantages__list">
+          <animated.ul className="advantages__list" style={listAnimation}>
             <li className="advantages__item">
               <img src={icon} alt="icon" className="advantages__item-icon" />
               <p className="advantages__item-text">
@@ -49,7 +89,7 @@ function Advantages() {
                 process an track
               </p>
             </li>
-          </ul>
+          </animated.ul>
         </div>
       </div>
     </section>

@@ -1,0 +1,152 @@
+.development {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 160px 15px 100px;
+}
+
+.development__section {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.development__heading {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  gap: 24px;
+}
+
+.development__heading-subtitle {
+  max-width: 462px;
+}
+
+.development__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 64px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.development__item {
+  display: flex;
+  justify-content: space-between;
+  max-width: 568px;
+  gap: 10px;
+}
+
+.development__item-images {
+  position: relative;
+  width: min-content;
+}
+
+.development__item-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 56px;
+  height: 56px;
+}
+
+.development__item-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 268px;
+  gap: 24px;
+}
+
+.development__item-subtitle {
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--gray-color);
+}
+
+@media screen and (max-width: 1080px) {
+  .development__item-img {
+    width: 203px;
+    height: 230px;
+  }
+
+  .development__item-heading {
+    gap: 10px;
+  }
+
+  .development__item-subtitle {
+    font-size: 14px;
+  }
+
+  .development__list {
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .development__list {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+  }
+  .development__item-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .development__item {
+    max-width: max-content;
+    gap: 32px;
+  }
+  .development__item-img {
+    width: 240px;
+    height: 273px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .development {
+    padding: 56px 15px;
+  }
+
+  .development__section {
+    gap: 32px;
+  }
+
+  .development__heading {
+    gap: 16px;
+  }
+
+  .development__list {
+    gap: 24px;
+  }
+
+  .development__item {
+    gap: 16px;
+    align-items: center;
+  }
+
+  .development__item-img {
+    width: 160px;
+    height: 216px;
+  }
+  .development__item-icon {
+    top: 25px;
+  }
+  .development__item-heading {
+    justify-content: start;
+    gap: 8px;
+  }
+
+  .development__item-title {
+    font-size: 16px;
+
+    line-height: 24px;
+  }
+
+  .development__item-subtitle {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

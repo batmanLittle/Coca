@@ -3,17 +3,39 @@ import graphs from "../../images/graphs.png";
 import Header from "../Header/Header";
 import Background from "../Background/Background";
 import { animated } from "react-spring";
+import useCustomAnimation from "../../hooks/useScrollAnimation";
 
-function DigitalInfo({
-  menuAnimation,
-  logoAnimation,
-  DigitalAnimation,
-  GraphsAnimation,
-  FormAnimation,
-}) {
+function DigitalInfo() {
+  const FormAnimation = useCustomAnimation({
+    from: { transform: "translateX(-50%)", opacity: "0" },
+    to: { transform: "translateX(0%)", opacity: "1" },
+    delay: 2100,
+    duration: 400,
+    id: "digital-info",
+  });
+
+  const DigitalAnimation = useCustomAnimation({
+    from: { transform: "translateX(-50%)", opacity: "0" },
+    to: { transform: "translateX(0%)", opacity: "1" },
+    delay: 1500,
+    duration: 400,
+    id: "digital-info",
+  });
+
+  const GraphsAnimation = useCustomAnimation({
+    from: {
+      transform: "translateX(50%)",
+      opacity: "0",
+    },
+    to: { transform: "translateX(0%)", opacity: "1" },
+    delay: 1800,
+    duration: 400,
+    id: "digital-info",
+  });
+
   return (
-    <section className="digital-info">
-      <Header logoAnimation={logoAnimation} menuAnimation={menuAnimation} />
+    <section className="digital-info" id="digital-info">
+      <Header />
       <Background />
       <div className="digital-info__container">
         <div className="digital-info__block">

@@ -1,0 +1,31 @@
+.news {
+  width: 100%;
+  padding: 60px 15px 90px;
+  justify-content: center;
+  display: flex;
+}
+
+.news__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: 80px;
+}
+
+.news__heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+
+.news__heading-title {
+  text-align: center;
+}
+
+.news__heading-subtitle {
+  text-align: center;
+  color: var(--gray-color);
+}

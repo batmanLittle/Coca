@@ -3,25 +3,81 @@ import icon from "../../images/functions-Icon.png";
 import icon1 from "../../images/functions-Icon (1).png";
 import icon2 from "../../images/functions-Icon (2).png";
 import icon3 from "../../images/functions-Icon (3).png";
+import useCustomAnimation from "../../hooks/useScrollAnimation";
+import { animated } from "react-spring";
 
 function Functions() {
+  const headingTitleAnimation = useCustomAnimation({
+    from: { transform: "translateX(-20%)", opacity: "0" },
+    to: { transform: "translateX(0%)", opacity: "1" },
+    delay: 100,
+    duration: 600,
+    id: "functions",
+  });
+
+  const headingSubtitleAnimation = useCustomAnimation({
+    from: { transform: "translateX(-20%)", opacity: "0" },
+    to: { transform: "translateX(0%)", opacity: "1" },
+    delay: 500,
+    duration: 600,
+    id: "functions",
+  });
+
+  const itemOneAnimation = useCustomAnimation({
+    from: { transform: "translateX(-50%)", opacity: "0" },
+    to: { transform: "translateX(0%)", opacity: "1" },
+    delay: 900,
+    duration: 600,
+    id: "functions",
+  });
+
+  const itemTwoAnimation = useCustomAnimation({
+    from: { transform: "translateX(-50%)", opacity: "0" },
+    to: { transform: "translateX(0%)", opacity: "1" },
+    delay: 1200,
+    duration: 600,
+    id: "functions",
+  });
+
+  const itemFreeAnimation = useCustomAnimation({
+    from: { transform: "translateX(50%)", opacity: "0" },
+    to: { transform: "translateX(0%)", opacity: "1" },
+    delay: 1500,
+    duration: 600,
+    id: "functions",
+  });
+
+  const itemFourAnimation = useCustomAnimation({
+    from: { transform: "translateX(50%)", opacity: "0" },
+    to: { transform: "translateX(0%)", opacity: "1" },
+    delay: 1800,
+    duration: 600,
+    id: "functions",
+  });
+
   return (
-    <section className="functions">
+    <section className="functions" id="functions">
       <div className="functions__container">
         <div className="functions__heading">
-          <h2 className="functions__heading-title">
+          <animated.h2
+            className="functions__heading-title"
+            style={headingTitleAnimation}
+          >
             Coca help our client solve complex customer problems with date that
             does more.
-          </h2>
+          </animated.h2>
 
-          <p className="functions__heading-subtitle">
+          <animated.p
+            className="functions__heading-subtitle"
+            style={headingSubtitleAnimation}
+          >
             Our platform offers the modern enterprise full control of how date
             can be access and used with industry leading software solutions for
             identity, activation, and date collaboration
-          </p>
+          </animated.p>
         </div>
         <ul className="functions__list">
-          <li className="functions__item">
+          <animated.li className="functions__item" style={itemOneAnimation}>
             <img src={icon} alt="Icon" className="functions__item-img" />
             <h3 className="functions__item-title">
               Build your date fundamental
@@ -31,8 +87,8 @@ function Functions() {
               revenue while maintaining full control over access and use of date
               at all times.
             </p>
-          </li>
-          <li className="functions__item">
+          </animated.li>
+          <animated.li className="functions__item" style={itemFreeAnimation}>
             <img src={icon1} alt="Icon" className="functions__item-img" />
             <h3 className="functions__item-title">Measure more effective</h3>
             <p className="functions__item-subtitle">
@@ -40,8 +96,8 @@ function Functions() {
               choose from best-of breed partners to optimize and drive media
               innovation.
             </p>
-          </li>
-          <li className="functions__item">
+          </animated.li>
+          <animated.li className="functions__item" style={itemTwoAnimation}>
             <img src={icon2} alt="icon" className="functions__item-img" />
             <h3 className="functions__item-title">Activate your date</h3>
             <p className="functions__item-subtitle">
@@ -49,8 +105,8 @@ function Functions() {
               channel, platform, publisher or network and safely translate date
               between identity space to improve results.
             </p>
-          </li>
-          <li className="functions__item">
+          </animated.li>
+          <animated.li className="functions__item" style={itemFourAnimation}>
             <img src={icon3} alt="icon" className="functions__item-img" />
             <h3 className="functions__item-title">
               Strengthen consumer privacy
@@ -60,7 +116,7 @@ function Functions() {
               technologies and advanced techniques to minimize date movement
               while still enabling insight generation.
             </p>
-          </li>
+          </animated.li>
         </ul>
       </div>
     </section>

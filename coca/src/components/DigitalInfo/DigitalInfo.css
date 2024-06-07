@@ -6,6 +6,8 @@
   align-items: center;
   overflow: hidden;
   padding: 0px 15px;
+  /* height: 100vh; */
+  /* margin-top: 100vh; */
 }
 
 .digital-info__container {
