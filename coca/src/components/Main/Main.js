@@ -5,6 +5,7 @@ import Statistics from "../Statistics/Statistics";
 import Partners from "../Partners/Partners";
 import Development from "../Development/Development";
 import News from "../News/News";
+import Reviews from "../Reviews/Reviews";
 
 function Main({ useCustomAnimation }) {
   return (
@@ -15,6 +16,7 @@ function Main({ useCustomAnimation }) {
       <Partners />
       <Development />
       <News />
+      <Reviews />
     </div>
   );
 }
