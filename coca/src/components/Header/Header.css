@@ -46,6 +46,10 @@
   color: var(--black-color);
 }
 
+.header__link_active {
+  font-weight: bold;
+}
+
 .header__mobile-menu {
   display: none;
 }

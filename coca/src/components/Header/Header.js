@@ -1,7 +1,7 @@
 import "./Header.css";
 import logo from "../../images/Logo-header.svg";
 import iconMobile from "../../images/Icon-mobile.png";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import MobileMenu from "../MobileMenu/MobileMenu";
 import { useState } from "react";
 import { animated } from "react-spring";
@@ -40,29 +40,64 @@ function Header() {
         <animated.nav className="header__menu" style={menuAnimation}>
           <ul className="header__list">
             <li className="header__item">
-              <Link to="#" className="header__link">
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `header__link ${
+                    isActive ? "header__link_active" : "header__link"
+                  }`
+                }
+              >
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li className="header__item">
-              <Link to="#" className="header__link">
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  `header__link ${
+                    isActive ? "header__link_active" : "header__link"
+                  }`
+                }
+              >
                 About
-              </Link>
+              </NavLink>
             </li>
             <li className="header__item">
-              <Link to="#" className="header__link">
+              <NavLink
+                to="/blog"
+                className={({ isActive }) =>
+                  `header__link ${
+                    isActive ? "header__link_active" : "header__link"
+                  }`
+                }
+              >
                 Blog
-              </Link>
+              </NavLink>
             </li>
             <li className="header__item">
-              <Link to="#" className="header__link">
+              <NavLink
+                to="/pricing"
+                className={({ isActive }) =>
+                  `header__link ${
+                    isActive ? "header__link_active" : "header__link"
+                  }`
+                }
+              >
                 Pricing
-              </Link>
+              </NavLink>
             </li>
           </ul>
-          <Link to="#" className="header__link">
+          <NavLink
+            to="/contact-us"
+            className={({ isActive }) =>
+              `header__link ${
+                isActive ? "header__link_active" : "header__link"
+              }`
+            }
+          >
             Contact Us
-          </Link>
+          </NavLink>
         </animated.nav>
         {isMenuOpened ? <MobileMenu /> : ""}
 

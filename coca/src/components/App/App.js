@@ -2,7 +2,7 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import DigitalInfo from "../DigitalInfo/DigitalInfo";
 import Main from "../Main/Main";
-import { useSpring } from "react-spring";
+import Footer from "../Footer/Footer";
 
 function App() {
   return (
@@ -14,9 +14,12 @@ function App() {
             <>
               <DigitalInfo />
               <Main />
+              <Footer />
             </>
           }
         />
+
+        <Route path="/about" element={<></>} />
       </Routes>
     </div>
   );
