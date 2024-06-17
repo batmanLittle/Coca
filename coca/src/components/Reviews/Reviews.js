@@ -9,7 +9,7 @@ import React, { useState } from "react";
 import { Virtual, Navigation, Pagination } from "swiper/modules";
 import useCustomAnimation from "../../hooks/useScrollAnimation";
 import { animated } from "react-spring";
-
+import { Heading } from "../Heading/Heading";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/virtual";
@@ -45,21 +45,16 @@ function Reviews() {
   return (
     <section className="reviews" id="reviews">
       <div className="reviews__container">
-        <div className="reviews__heading">
-          <animated.h2
-            className="reviews__heading-title"
-            style={titleAnimation}
-          >
-            What our customer are saying
-          </animated.h2>
-          <animated.p
-            className="reviews__heading-subtitle"
-            style={subtitleAnimation}
-          >
-            We are trusted numerous companies from different business to meet
-            their needs
-          </animated.p>
-        </div>
+        <Heading
+          title="What our customer are saying"
+          text="We are trusted numerous companies from different business to meet
+            their needs"
+          classHeading="reviews__heading"
+          classTitle="reviews__heading-title"
+          classSubtitle="reviews__heading-subtitle"
+          styleTitle={titleAnimation}
+          styleSubtitle={subtitleAnimation}
+        />
         <animated.div style={swiperAnimation}>
           <img className="reviews__img" src={quotes} alt="quotes" />
           <Swiper

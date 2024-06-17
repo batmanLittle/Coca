@@ -3,6 +3,7 @@
   justify-content: center;
   width: 100%;
   padding: 160px 15px 100px;
+  overflow: hidden;
 }
 
 .development__section {
@@ -14,10 +15,7 @@
 }
 
 .development__heading {
-  display: flex;
-  flex-direction: column;
   max-width: 600px;
-  gap: 24px;
 }
 
 .development__heading-subtitle {
@@ -114,9 +112,6 @@
     gap: 32px;
   }
 
-  .development__heading {
-    gap: 16px;
-  }
 
   .development__list {
     gap: 24px;

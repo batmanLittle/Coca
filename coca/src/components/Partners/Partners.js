@@ -9,6 +9,7 @@ import walmart from "../../images/Walmart-Logo.svg";
 import OYO from "../../images/OYO-Logo.svg";
 import useCustomAnimation from "../../hooks/useScrollAnimation";
 import { animated } from "react-spring";
+import { Heading } from "../Heading/Heading";
 
 function Partners() {
   const titleAnimation = useCustomAnimation({
@@ -19,101 +20,50 @@ function Partners() {
     id: "partners",
   });
 
-  const airbnbAnimation = useCustomAnimation({
-    from: { transform: "translateX(-100%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 300,
-    duration: 200,
-    id: "partners",
-  });
-
-  const amazonAnimation = useCustomAnimation({
-    from: { transform: "translateX(-100%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 500,
-    duration: 200,
-    id: "partners",
-  });
-
-  const fedExAnimation = useCustomAnimation({
-    from: { transform: "translateX(-100%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 700,
-    duration: 200,
-    id: "partners",
-  });
-
-  const microsoftAnimation = useCustomAnimation({
-    from: { transform: "translateX(-100%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 900,
-    duration: 200,
-    id: "partners",
-  });
-
-  const oyoAnimation = useCustomAnimation({
-    from: { transform: "translateX(100%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 1100,
-    duration: 200,
-    id: "partners",
-  });
-
-  const walmartAnimation = useCustomAnimation({
-    from: { transform: "translateX(100%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 1300,
-    duration: 200,
-    id: "partners",
-  });
-
-  const olaAnimation = useCustomAnimation({
-    from: { transform: "translateX(100%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 1500,
-    duration: 200,
-    id: "partners",
-  });
-
-  const googleAnimation = useCustomAnimation({
-    from: { transform: "translateX(100%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 1700,
-    duration: 200,
-    id: "partners",
-  });
-
   const subtitleAnimation = useCustomAnimation({
-    from: { transform: "translateX(50%)", opacity: "0" },
+    from: { transform: "translateX(20%)", opacity: "0" },
     to: { transform: "translateX(0%)", opacity: "1" },
     delay: 1900,
     duration: 200,
     id: "partners",
   });
 
+  const useItemRightAnimation = (delay) =>
+    useCustomAnimation({
+      from: { transform: "translateX(-100%)", opacity: "0" },
+      to: { transform: "translateX(0%)", opacity: "1" },
+      delay,
+      duration: 200,
+      id: "partners",
+    });
+
+  const useItemLeftAnimation = (delay) =>
+    useCustomAnimation({
+      from: { transform: "translateX(100%)", opacity: "0" },
+      to: { transform: "translateX(0%)", opacity: "1" },
+      delay,
+      duration: 200,
+      id: "partners",
+    });
+
   return (
     <section className="partners" id="partners">
       <div className="partners__container">
-        <div className="partners__heading">
-          <animated.h2
-            className="partners__heading-title"
-            style={titleAnimation}
-          >
-            890+
-          </animated.h2>
-          <animated.p
-            className="partners__heading-subtitle"
-            style={subtitleAnimation}
-          >
-            some big companies that we work with, and trust us very much
-          </animated.p>
-        </div>
+        <Heading
+          title="890+"
+          text="some big companies that we work with, and trust us very much"
+          classHeading="partners__heading"
+          classTitle="partners__heading-title"
+          classSubtitle="partners__heading-subtitle"
+          styleTitle={titleAnimation}
+          styleSubtitle={subtitleAnimation}
+        />
         <ul className="partners__list">
           <li className="partners__item">
             <animated.img
               className="partners__item-img"
               alt="logo"
-              style={airbnbAnimation}
+              style={useItemRightAnimation(300)}
               src={airbnb}
             />
           </li>
@@ -122,7 +72,7 @@ function Partners() {
               className="partners__item-img"
               alt="logo"
               src={amazon}
-              style={amazonAnimation}
+              style={useItemRightAnimation(500)}
             />
           </li>
           <li className="partners__item">
@@ -130,7 +80,7 @@ function Partners() {
               className="partners__item-img"
               alt="logo"
               src={fedEx}
-              style={fedExAnimation}
+              style={useItemRightAnimation(700)}
             />
           </li>
           <li className="partners__item">
@@ -138,7 +88,7 @@ function Partners() {
               className="partners__item-img"
               alt="logo"
               src={microsoft}
-              style={microsoftAnimation}
+              style={useItemRightAnimation(900)}
             />
           </li>
           <li className="partners__item">
@@ -146,7 +96,7 @@ function Partners() {
               className="partners__item-img"
               alt="logo"
               src={google}
-              style={googleAnimation}
+              style={useItemLeftAnimation(1700)}
             />
           </li>
           <li className="partners__item">
@@ -154,7 +104,7 @@ function Partners() {
               className="partners__item-img"
               alt="logo"
               src={OLA}
-              style={olaAnimation}
+              style={useItemLeftAnimation(1500)}
             />
           </li>
           <li className="partners__item">
@@ -162,7 +112,7 @@ function Partners() {
               className="partners__item-img"
               alt="logo"
               src={walmart}
-              style={walmartAnimation}
+              style={useItemLeftAnimation(1300)}
             />
           </li>
           <li className="partners__item">
@@ -170,7 +120,7 @@ function Partners() {
               className="partners__item-img"
               alt="logo"
               src={OYO}
-              style={oyoAnimation}
+              style={useItemLeftAnimation(1100)}
             />
           </li>
         </ul>

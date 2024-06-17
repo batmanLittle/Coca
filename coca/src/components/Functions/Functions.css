@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     padding: 100px 15px;
+    overflow: hidden;
 }
 
 .functions__container{
@@ -12,6 +13,7 @@ width: 100%;
 display: flex;
 flex-direction: column;
 gap: 80px;
+
 }
 
 .functions__heading{
@@ -22,12 +24,12 @@ gap: 80px;
 }
 
 .functions__heading-title{
+max-width: 816px;
 color: var(--white-color);
 }
 
 .functions__heading-subtitle{
-    color: var(--white-color);
-    max-width: 660px;
+   max-width: 660px;
 }
 
 .functions__list{
@@ -88,7 +90,9 @@ column-gap: 40px;
 }
 
 @media screen and (max-width: 600px){
-
+    .functions{
+        padding: 40px 15px;
+    }
     
     .functions__container{
 
@@ -103,16 +107,11 @@ column-gap: 40px;
     .functions__item{
     gap: 16px;
     max-width: 100%;
-}
-    
-
-    
+}   
     .functions__item-subtitle{
     color:var(--gray-color);
     max-width:100%;
     font-size: 14px;
     line-height: 20px;
-    }
-  
-  
+    } 
   }

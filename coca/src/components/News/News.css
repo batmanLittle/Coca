@@ -15,10 +15,7 @@
 }
 
 .news__heading {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  gap: 24px;
 }
 
 .news__heading-title {
@@ -27,7 +24,6 @@
 
 .news__heading-subtitle {
   text-align: center;
-  color: var(--gray-color);
 }
 
 .swiper-slide{
@@ -133,9 +129,6 @@ z-index: 4;
     gap: 32px;
   }
   
-  .news__heading {
-    gap: 16px;
-  }
 
 .news__slider{
   gap: 8px;

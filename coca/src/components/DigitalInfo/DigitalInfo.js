@@ -4,6 +4,7 @@ import Header from "../Header/Header";
 import Background from "../Background/Background";
 import { animated } from "react-spring";
 import useCustomAnimation from "../../hooks/useScrollAnimation";
+import Button from "../Button/Button";
 
 function DigitalInfo() {
   const FormAnimation = useCustomAnimation({
@@ -52,7 +53,7 @@ function DigitalInfo() {
               className="digital-info__input"
               placeholder="Enter your email"
             ></input>
-            <button className="digital-info__button">Try for free</button>
+            <Button text={"Try for free"} />
           </animated.form>
         </div>
         <animated.div style={GraphsAnimation} className="digital-info__img">

@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import { Virtual, Navigation, Pagination } from "swiper/modules";
 import useCustomAnimation from "../../hooks/useScrollAnimation";
 import { animated } from "react-spring";
-
+import { Heading } from "../Heading/Heading";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/virtual";
@@ -43,17 +43,15 @@ function News() {
   return (
     <section className="news" id="news">
       <div className="news__container">
-        <div className="news__heading">
-          <animated.h2 className="news__heading-title" style={titleAnimation}>
-            Trending news from Coca
-          </animated.h2>
-          <animated.p
-            className="news__heading-subtitle"
-            style={subtitleAnimation}
-          >
-            we have some new Service to pamper you
-          </animated.p>
-        </div>
+        <Heading
+          title="Trending news from Coca"
+          text="we have some new Service to pamper you"
+          classHeading="news__heading"
+          classTitle="news__heading-title"
+          classSubtitle="news__heading-subtitle"
+          styleTitle={titleAnimation}
+          styleSubtitle={subtitleAnimation}
+        />
         <animated.div style={swiperAnimation}>
           <Swiper
             spaceBetween={16}

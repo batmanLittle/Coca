@@ -3,6 +3,7 @@
   padding: 70px 15px 160px;
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
 
 .reviews__container {
@@ -13,7 +14,7 @@
 }
 
 .reviews__heading {
-  display: flex;
+  flex-direction: row;
   justify-content: space-between;
   margin-bottom: 48px;
   align-items: center;
@@ -25,7 +26,6 @@
 
 .reviews__heading-subtitle {
   max-width: 376px;
-  color: var(--gray-color);
 }
 
 .reviews__img {
@@ -111,7 +111,6 @@
   .reviews__heading {
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
   }
 
   .reviews__heading-title {

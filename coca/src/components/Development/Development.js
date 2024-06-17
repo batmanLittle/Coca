@@ -9,6 +9,7 @@ import workTeam from "../../images/development-work-team.svg";
 import group from "../../images/icon-group.svg";
 import chill from "../../images/development-chill.svg";
 import graph2 from "../../images/icon-graph2.svg";
+import { Heading } from "../Heading/Heading";
 
 function Development() {
   const titleAnimation = useCustomAnimation({
@@ -62,22 +63,17 @@ function Development() {
   return (
     <section className="development" id="development">
       <div className="development__section">
-        <div className="development__heading">
-          <animated.h2
-            className="development__heading-title"
-            style={titleAnimation}
-          >
-            Advertise, analyze, and optimize! We do it all for you
-          </animated.h2>
-          <animated.p
-            className="development__heading-subtitle"
-            style={subtitleAnimation}
-          >
-            Build more meaningful and lasting relationships - better understand
+        <Heading
+          title=" Advertise, analyze, and optimize! We do it all for you"
+          text="Build more meaningful and lasting relationships - better understand
             their needs, identify new opportunities to help address any problems
-            faster
-          </animated.p>
-        </div>
+            faster"
+          classHeading="development__heading"
+          classTitle="development__heading-title"
+          classSubtitle="development__heading-subtitle"
+          styleTitle={titleAnimation}
+          styleSubtitle={subtitleAnimation}
+        />
         <ul className="development__list">
           <animated.li className="development__item" style={itemOneAnimation}>
             <div className="development__item-images">

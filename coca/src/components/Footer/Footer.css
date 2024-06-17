@@ -54,21 +54,6 @@
   font-size: 20px;
 }
 
-.footer__button {
-  padding: 16px 32px;
-  background-color: var(--black-color);
-  border-radius: 100px;
-  color: var(--white-color);
-  text-align: center;
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 24px;
-  z-index: 3;
-  border: 0px;
-}
-
 .footer__bottom {
   display: flex;
   flex-direction: column;
@@ -202,13 +187,6 @@
 
   .footer__heading-subtitle::before {
     font-size: 10px;
-  }
-
-  .footer__button {
-    margin-left: 50px;
-    padding: 12px 24px;
-    font-size: 14px;
-    line-height: 20px;
   }
 
   .footer__bottom {

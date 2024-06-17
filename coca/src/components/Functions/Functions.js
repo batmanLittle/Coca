@@ -5,6 +5,7 @@ import icon2 from "../../images/functions-Icon (2).png";
 import icon3 from "../../images/functions-Icon (3).png";
 import useCustomAnimation from "../../hooks/useScrollAnimation";
 import { animated } from "react-spring";
+import { Heading } from "../Heading/Heading";
 
 function Functions() {
   const headingTitleAnimation = useCustomAnimation({
@@ -58,24 +59,17 @@ function Functions() {
   return (
     <section className="functions" id="functions">
       <div className="functions__container">
-        <div className="functions__heading">
-          <animated.h2
-            className="functions__heading-title"
-            style={headingTitleAnimation}
-          >
-            Coca help our client solve complex customer problems with date that
-            does more.
-          </animated.h2>
-
-          <animated.p
-            className="functions__heading-subtitle"
-            style={headingSubtitleAnimation}
-          >
-            Our platform offers the modern enterprise full control of how date
+        <Heading
+          title=" Coca help our client solve complex customer problems with date that
+            does more."
+          text="Our platform offers the modern enterprise full control of how date
             can be access and used with industry leading software solutions for
-            identity, activation, and date collaboration
-          </animated.p>
-        </div>
+            identity, activation, and date collaboration"
+          classTitle="functions__heading-title"
+          classSubtitle="functions__heading-subtitle"
+          styleTitle={headingTitleAnimation}
+          styleSubtitle={headingSubtitleAnimation}
+        />
         <ul className="functions__list">
           <animated.li className="functions__item" style={itemOneAnimation}>
             <img src={icon} alt="Icon" className="functions__item-img" />

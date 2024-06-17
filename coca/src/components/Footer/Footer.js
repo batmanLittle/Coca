@@ -7,6 +7,7 @@ import instagram from "../../images/icon-instagram.svg";
 import iconIn from "../../images/icon-in.svg";
 import useCustomAnimation from "../../hooks/useScrollAnimation";
 import { animated } from "react-spring";
+import Button from "../Button/Button";
 
 function Footer() {
   const titleAnimation = useCustomAnimation({
@@ -78,9 +79,7 @@ function Footer() {
               else. Our highly trained reps are standing by, ready to help
             </animated.p>
           </div>
-          <animated.button className="footer__button" style={buttonAnimation}>
-            Try for free
-          </animated.button>
+          <Button text={"Try for free"} styleButton={buttonAnimation} />
         </div>
 
         <div className="footer__bottom">

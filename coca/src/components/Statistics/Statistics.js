@@ -3,6 +3,7 @@ import team from "../../images/statistics-image.svg";
 import { useEffect, useState } from "react";
 import useCustomAnimation from "../../hooks/useScrollAnimation";
 import { animated } from "react-spring";
+import { Heading } from "../Heading/Heading";
 
 function Statistics() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -113,23 +114,15 @@ function Statistics() {
           alt="team"
           style={imgAnimation}
         />
-        <div className="statistics__heading">
-          <animated.h2
-            className="statistics__heading-title"
-            style={titleAnimation}
-          >
-            Lift your business to new heights with our digital marketing
-            services
-          </animated.h2>
-          <animated.p
-            className="statistics__heading-subtitle"
-            style={subtitleAnimation}
-          >
-            To build software that gives customer facing teams in small and
-            medium-sized businesses the ability to create rewarding and
-            long-lasting relationships with customers
-          </animated.p>
-        </div>
+        <Heading
+          title="Lift your business to new heights with our digital marketing services"
+          text="To build software that gives customer facing teams in small and medium-sized businesses the ability to create rewarding and long-lasting relationships with customers"
+          classHeading="statistics__heading"
+          classTitle="statistics__heading-title"
+          classSubtitle="statistics__heading-subtitle"
+          styleTitle={titleAnimation}
+          styleSubtitle={subtitleAnimation}
+        />
       </div>
     </section>
   );

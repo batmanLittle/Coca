@@ -4,6 +4,7 @@ import icon from "../../images/advantages-icon.png";
 import imageGraphs from "../../images/advantages-graphs.svg";
 import useCustomAnimation from "../../hooks/useScrollAnimation";
 import { animated } from "react-spring";
+import { Heading } from "../Heading/Heading";
 
 function Advantages() {
   const imgAnimation = useCustomAnimation({
@@ -54,21 +55,15 @@ function Advantages() {
           />
         </animated.div>
         <div className="advantages__info">
-          <div className="advantages__heading">
-            <animated.h2
-              className="advantages__heading-title"
-              style={titleAnimation}
-            >
-              Passion to increase company revenue up to 85%
-            </animated.h2>
-            <animated.p
-              className="advantages__heading-subtitle"
-              style={subtitleAnimation}
-            >
-              Automate your sales, marketing and service in one platform. Avoid
-              date leaks and enable consistent messaging
-            </animated.p>
-          </div>
+          <Heading
+            title=" Passion to increase company revenue up to 85%"
+            text="Automate your sales, marketing and service in one platform. Avoid date leaks and enable consistent messaging"
+            classHeading="advantages__heading"
+            classTitle="advantages__heading-title"
+            classSubtitle="advantages__heading-subtitle"
+            styleTitle={titleAnimation}
+            styleSubtitle={subtitleAnimation}
+          />
           <animated.ul className="advantages__list" style={listAnimation}>
             <li className="advantages__item">
               <img src={icon} alt="icon" className="advantages__item-icon" />
