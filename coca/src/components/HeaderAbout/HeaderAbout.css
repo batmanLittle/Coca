@@ -1,0 +1,239 @@
+.header-about {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 15px 165px;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-about-background {
+  position: absolute;
+  width: 60%;
+  height: 80%;
+  z-index: -1;
+  left: 0px;
+  bottom: -30%;
+}
+
+.header-about__container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  width: 100%;
+  gap: 135px;
+}
+
+.header-about__intro {
+  margin-top: 105px;
+  display: flex;
+}
+
+.header-about__heading {
+  max-width: 934px;
+}
+
+.header-about__subtitle {
+  max-width: 762px;
+}
+
+.header-about__img {
+  margin-bottom: 27px;
+  margin-top: auto;
+  width: 162px;
+  height: 162px;
+}
+
+.header-about__sliders {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.header-about__button {
+  position: absolute;
+  top: 20%;
+  left: calc(39.6% - 45px);
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  background-color: var(--white-color);
+  z-index: 4;
+  transition: transform 5s ease-in-out;
+}
+
+.header-about__button_active {
+  position: absolute;
+  top: 20%;
+  left: calc(60.1% - 45px);
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  background-color: var(--white-color);
+  z-index: 4;
+  transition: transform 5s ease-in-out;
+}
+
+.header-about__button-prev {
+  position: absolute;
+  left: 0px;
+  height: 100%;
+  width: 50%;
+  z-index: 4;
+}
+
+.header-about__button-next {
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  right: 0px;
+  z-index: 4;
+}
+.header-about__slider {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 100%;
+  height: auto;
+}
+
+.header-about__slider-img {
+  max-width: 100%;
+  width: 100%;
+}
+
+.header-about__slider-title {
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 48px */
+  letter-spacing: -0.32px;
+}
+
+.header-about__slider-text {
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--grey-color);
+}
+
+@media screen and (max-width: 1050px) {
+  .header-about-background {
+    bottom: -30%;
+  }
+  .header-about__slider-title {
+    font-size: 26px;
+    line-height: 130%;
+  }
+
+  .header-about__slider-text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@media screen and (max-width: 899px) {
+  .header-about-background {
+    bottom: -30%;
+  }
+  .header-about__button_active,
+  .header-about__button {
+    left: calc(49.8% - 40px);
+    width: 80px;
+    height: 80px;
+  }
+  .header-about__intro {
+    margin-top: 80px;
+  }
+  .header-about__img {
+    margin-bottom: 20px;
+    margin-top: auto;
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .header-about-background {
+    width: 80%;
+    bottom: -10%;
+  }
+  .header-about__button_active,
+  .header-about__button {
+    left: calc(49.8% - 35px);
+    width: 70px;
+    height: 70px;
+  }
+
+  .header-about__container {
+    gap: 60px;
+  }
+  .header-about__slider-text {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .header-about__slider-title {
+    font-size: 22px;
+    line-height: 120%;
+  }
+  .header-about__intro {
+    margin-top: 32px;
+    flex-direction: column;
+  }
+  .header-about__img {
+    margin-right: 0px;
+    margin-left: auto;
+    width: 69px;
+    height: 69px;
+    margin-bottom: 0px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .header-about-background {
+    height: 50%;
+    bottom: -10%;
+  }
+  .header-about {
+    padding: 0px 15px 56px;
+  }
+  .header-about__button_active,
+  .header-about__button {
+    display: none;
+  }
+  .header-about__container {
+    gap: 30px;
+  }
+  .header-about__slider-text {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .header-about__slider-title {
+    font-size: 28px;
+    line-height: 24px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header-about__container {
+    gap: 16px;
+  }
+  .header-about__slider-text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .header-about__slider-title {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}

@@ -1,6 +1,11 @@
 import "./Footer.css";
 import Background from "../Background/Background";
 import logo from "../../images/Logo-header.svg";
+import logoWhite from "../../images/Logo-white.svg";
+import twitterWhite from "../../images/twitter-white.svg";
+import facebookWhite from "../../images/facebook-white.svg";
+import instagramWhite from "../../images/instagram-white.svg";
+import inWhite from "../../images/in-white.svg";
 import twitter from "../../images/icon-twitter.svg";
 import facebook from "../../images/icon-facebook.svg";
 import instagram from "../../images/icon-instagram.svg";
@@ -8,8 +13,16 @@ import iconIn from "../../images/icon-in.svg";
 import useCustomAnimation from "../../hooks/useScrollAnimation";
 import { animated } from "react-spring";
 import Button from "../Button/Button";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 function Footer() {
+  const location = useLocation();
+
+  useEffect(() => {
+    console.log(location);
+  }, [location]);
+
   const titleAnimation = useCustomAnimation({
     from: { transform: "translateX(-20%)", opacity: "0" },
     to: { transform: "translateX(0%)", opacity: "1" },
@@ -60,7 +73,12 @@ function Footer() {
     });
 
   return (
-    <footer className="footer" id="footer">
+    <footer
+      className={
+        location.pathname === "/" ? "footer" : "footer background-black"
+      }
+      id="footer"
+    >
       <Background />
       <div className="footer__container">
         <div className="footer__top">
@@ -72,14 +90,22 @@ function Footer() {
               Think beyond the wave
             </animated.h2>
             <animated.p
-              className="footer__heading-subtitle"
+              className={
+                location.pathname === "/"
+                  ? "footer__heading-subtitle"
+                  : "footer__heading-subtitle_grey"
+              }
               style={subtitleAnimation}
             >
               Ask about Sans products, pricing, implementation, or anything
               else. Our highly trained reps are standing by, ready to help
             </animated.p>
           </div>
-          <Button text={"Try for free"} styleButton={buttonAnimation} />
+          <Button
+            text={"Try for free"}
+            styleButton={buttonAnimation}
+            classButton={location.pathname === "/" ? null : "footer__button"}
+          />
         </div>
 
         <div className="footer__bottom">
@@ -88,7 +114,7 @@ function Footer() {
               <animated.img
                 style={logoAnimation}
                 className="footer__bottom-logo"
-                src={logo}
+                src={location.pathname === "/" ? logo : logoWhite}
                 alt="logo"
               />
               <animated.p
@@ -247,19 +273,23 @@ function Footer() {
               <img
                 className="footer__social-logo"
                 alt="facebook"
-                src={facebook}
+                src={location.pathname === "/" ? facebook : facebookWhite}
               />
               <img
                 className="footer__social-logo"
                 alt="twitter"
-                src={twitter}
+                src={location.pathname === "/" ? twitter : twitterWhite}
               />
               <img
                 className="footer__social-logo"
                 alt="instagram"
-                src={instagram}
+                src={location.pathname === "/" ? instagram : instagramWhite}
               />
-              <img className="footer__social-logo" alt="iconIn" src={iconIn} />
+              <img
+                className="footer__social-logo"
+                alt="iconIn"
+                src={location.pathname === "/" ? iconIn : inWhite}
+              />
             </div>
             <nav className="footer__mobile-link">
               <p className="footer__bottom-text">Privacy Policy</p>

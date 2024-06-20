@@ -32,13 +32,13 @@
 }
 
 .statistics__item-subtitle {
-  color: var(--gray-color);
+  color: var(--grey-color);
 }
 
 .statistics__separator {
   width: 1px;
   height: 99px;
-  background-color: var(--gray-color);
+  background-color: var(--grey-color);
 }
 
 .statistics__image {
@@ -69,7 +69,6 @@
 @media screen and (max-width: 1030px) {
   .statistics__heading {
     flex-direction: column;
-
   }
 
   .statistics__heading-title {
@@ -121,7 +120,6 @@
   .statistics__container {
     gap: 36px;
   }
-
 }
 
 @media screen and (max-width: 400px) {
@@ -141,5 +139,4 @@
   .statistics__separator {
     height: 64px;
   }
-
 }

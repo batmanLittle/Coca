@@ -3,6 +3,10 @@ import { Routes, Route } from "react-router-dom";
 import DigitalInfo from "../DigitalInfo/DigitalInfo";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
+import HeaderAbout from "../HeaderAbout/HeaderAbout";
+import Ideas from "../Ideas/Ideas";
+import Team from "../Team/Team";
+import HeaderBlog from "../HeaderBlog/HeaderBlog";
 
 function App() {
   return (
@@ -19,7 +23,26 @@ function App() {
           }
         />
 
-        <Route path="/about" element={<></>} />
+        <Route
+          path="/about"
+          element={
+            <>
+              <HeaderAbout />
+              <Ideas />
+              <Team />
+              <Footer />
+            </>
+          }
+        />
+
+        <Route
+          path="/blog"
+          element={
+            <>
+              <HeaderBlog />
+            </>
+          }
+        />
       </Routes>
     </div>
   );

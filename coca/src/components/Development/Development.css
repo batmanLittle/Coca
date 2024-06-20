@@ -62,7 +62,7 @@
 .development__item-subtitle {
   font-size: 16px;
   line-height: 26px;
-  color: var(--gray-color);
+  color: var(--grey-color);
 }
 
 @media screen and (max-width: 1080px) {
@@ -111,7 +111,6 @@
   .development__section {
     gap: 32px;
   }
-
 
   .development__list {
     gap: 24px;
