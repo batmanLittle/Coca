@@ -7,6 +7,10 @@ import HeaderAbout from "../HeaderAbout/HeaderAbout";
 import Ideas from "../Ideas/Ideas";
 import Team from "../Team/Team";
 import HeaderBlog from "../HeaderBlog/HeaderBlog";
+import MainQuestions from "../MainQuestions/MainQuestions";
+import Articles from "../Articles/Articles";
+import PricingPlan from "../PricingPlan/PricingPlan";
+import Questions from "../Questions/Questions";
 
 function App() {
   return (
@@ -40,6 +44,20 @@ function App() {
           element={
             <>
               <HeaderBlog />
+              <MainQuestions />
+              <Articles />
+              <Footer />
+            </>
+          }
+        />
+
+        <Route
+          path="/pricing"
+          element={
+            <>
+              <PricingPlan />
+              <Questions />
+              <Footer />
             </>
           }
         />

@@ -75,7 +75,9 @@ function Footer() {
   return (
     <footer
       className={
-        location.pathname === "/" ? "footer" : "footer background-black"
+        location.pathname === "/" || location.pathname === "/blog"
+          ? "footer"
+          : "footer background-black"
       }
       id="footer"
     >
@@ -91,7 +93,7 @@ function Footer() {
             </animated.h2>
             <animated.p
               className={
-                location.pathname === "/"
+                location.pathname === "/" || location.pathname === "/blog"
                   ? "footer__heading-subtitle"
                   : "footer__heading-subtitle_grey"
               }
@@ -104,7 +106,11 @@ function Footer() {
           <Button
             text={"Try for free"}
             styleButton={buttonAnimation}
-            classButton={location.pathname === "/" ? null : "footer__button"}
+            classButton={
+              location.pathname === "/" || location.pathname === "/blog"
+                ? null
+                : "footer__button"
+            }
           />
         </div>
 
@@ -114,7 +120,11 @@ function Footer() {
               <animated.img
                 style={logoAnimation}
                 className="footer__bottom-logo"
-                src={location.pathname === "/" ? logo : logoWhite}
+                src={
+                  location.pathname === "/" || location.pathname === "/blog"
+                    ? logo
+                    : logoWhite
+                }
                 alt="logo"
               />
               <animated.p
@@ -273,22 +283,38 @@ function Footer() {
               <img
                 className="footer__social-logo"
                 alt="facebook"
-                src={location.pathname === "/" ? facebook : facebookWhite}
+                src={
+                  location.pathname === "/" || location.pathname === "/blog"
+                    ? facebook
+                    : facebookWhite
+                }
               />
               <img
                 className="footer__social-logo"
                 alt="twitter"
-                src={location.pathname === "/" ? twitter : twitterWhite}
+                src={
+                  location.pathname === "/" || location.pathname === "/blog"
+                    ? twitter
+                    : twitterWhite
+                }
               />
               <img
                 className="footer__social-logo"
                 alt="instagram"
-                src={location.pathname === "/" ? instagram : instagramWhite}
+                src={
+                  location.pathname === "/" || location.pathname === "/blog"
+                    ? instagram
+                    : instagramWhite
+                }
               />
               <img
                 className="footer__social-logo"
                 alt="iconIn"
-                src={location.pathname === "/" ? iconIn : inWhite}
+                src={
+                  location.pathname === "/" || location.pathname === "/blog"
+                    ? iconIn
+                    : inWhite
+                }
               />
             </div>
             <nav className="footer__mobile-link">
