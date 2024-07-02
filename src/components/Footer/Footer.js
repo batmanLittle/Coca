@@ -14,7 +14,6 @@ import useCustomAnimation from "../../hooks/useScrollAnimation";
 import { animated } from "react-spring";
 import Button from "../Button/Button";
 import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
 
 function Footer() {
   const location = useLocation();

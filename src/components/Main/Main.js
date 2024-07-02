@@ -6,12 +6,11 @@ import Partners from "../Partners/Partners";
 import Development from "../Development/Development";
 import News from "../News/News";
 import Reviews from "../Reviews/Reviews";
-import { HeadingMain } from "../HeadingMain/HeadingMain";
 
-function Main({ useCustomAnimation }) {
+function Main() {
   return (
     <div className="main">
-      <Functions useCustomAnimation={useCustomAnimation} />
+      <Functions />
       <Advantages />
       <Statistics />
       <Partners />
