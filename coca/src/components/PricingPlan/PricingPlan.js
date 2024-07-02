@@ -8,48 +8,14 @@ import useCustomAnimation from "../../hooks/useScrollAnimation";
 import { animated } from "react-spring";
 
 function PricingPlan() {
-  const buttonAnimation = useCustomAnimation({
-    from: { transform: "translateY(300%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 1300,
-    duration: 300,
-    id: "pricing-plan",
-  });
-  const titleAnimation = useCustomAnimation({
-    from: { transform: "translateY(50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 1600,
-    duration: 300,
-    id: "pricing-plan",
-  });
-  const subtitleAnimation = useCustomAnimation({
-    from: { transform: "translateY(300%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 1900,
-    duration: 300,
-    id: "pricing-plan",
-  });
-  const cardOneAnimation = useCustomAnimation({
-    from: { transform: "translateY(50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 2200,
-    duration: 300,
-    id: "pricing-plan",
-  });
-  const cardTwoAnimation = useCustomAnimation({
-    from: { transform: "translateY(50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 2500,
-    duration: 300,
-    id: "pricing-plan",
-  });
-  const cardFreeAnimation = useCustomAnimation({
-    from: { transform: "translateY(50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 2800,
-    duration: 300,
-    id: "pricing-plan",
-  });
+  const useItemAnimation = (transform, delay) =>
+    useCustomAnimation({
+      from: { transform, opacity: "0" },
+      to: { transform: "translateX(0%)", opacity: "1" },
+      delay,
+      duration: 300,
+      id: "pricing-plan",
+    });
 
   return (
     <section className="pricing-plan" id="pricing-plan">
@@ -59,19 +25,19 @@ function PricingPlan() {
         <div className="pricing-plan__heading">
           <animated.button
             className="pricing-plan__heading-button"
-            style={buttonAnimation}
+            style={useItemAnimation("translateY(300%)", 1300)}
           >
             Pricing plans 🤑
           </animated.button>
           <animated.h2
             className="pricing-plan__heading-title"
-            style={titleAnimation}
+            style={useItemAnimation("translateY(50%)", 1600)}
           >
             Choose a plan for a more advanced business
           </animated.h2>
           <animated.p
             className="pricing-plan__heading-subtitle"
-            style={subtitleAnimation}
+            style={useItemAnimation("translateY(300%)", 1900)}
           >
             Annual pricing (save 20%)
           </animated.p>
@@ -81,19 +47,19 @@ function PricingPlan() {
             className="pricing-plan__card"
             alt="card"
             src={card}
-            style={cardOneAnimation}
+            style={useItemAnimation("translateY(50%)", 2200)}
           />
           <animated.img
             className="pricing-plan__card-black"
             alt="card"
             src={card1}
-            style={cardTwoAnimation}
+            style={useItemAnimation("translateY(50%)", 2500)}
           />
           <animated.img
             className="pricing-plan__card"
             alt="card"
             src={card2}
-            style={cardFreeAnimation}
+            style={useItemAnimation("translateY(50%)", 2800)}
           />
         </div>
       </div>

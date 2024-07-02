@@ -10,21 +10,14 @@ import useCustomAnimation from "../../hooks/useScrollAnimation";
 function Header() {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
 
-  const logoAnimation = useCustomAnimation({
-    from: { transform: "translateX(-50%)", opacity: "0" },
-    to: { transform: "translateY(0%)", opacity: "1" },
-    delay: 100,
-    duration: 1000,
-    id: "header",
-  });
-
-  const menuAnimation = useCustomAnimation({
-    from: { transform: "translateX(-50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 1000,
-    duration: 400,
-    id: "header",
-  });
+  const useItemAnimation = (delay) =>
+    useCustomAnimation({
+      from: { transform: "translateX(-50%)", opacity: "0" },
+      to: { transform: "translateX(0%)", opacity: "1" },
+      delay,
+      duration: 400,
+      id: "header",
+    });
 
   function toggleMenu() {
     setIsMenuOpened(!isMenuOpened);
@@ -33,11 +26,11 @@ function Header() {
   return (
     <header className="header" id="header">
       <div className="header-container">
-        <animated.div style={logoAnimation}>
+        <animated.div style={useItemAnimation(100)}>
           <img className="header__logo" src={logo} alt="logo" />
         </animated.div>
 
-        <animated.nav className="header__menu" style={menuAnimation}>
+        <animated.nav className="header__menu" style={useItemAnimation(800)}>
           <ul className="header__list">
             <li className="header__item">
               <NavLink

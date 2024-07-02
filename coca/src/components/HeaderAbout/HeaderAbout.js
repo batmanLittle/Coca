@@ -31,43 +31,14 @@ function HeaderAbout() {
     setButtonPosition(false);
   };
 
-  const titleAnimation = useCustomAnimation({
-    from: { transform: "translateX(-50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 1500,
-    duration: 400,
-    id: "header-about",
-  });
-
-  const subtitleAnimation = useCustomAnimation({
-    from: { transform: "translateX(-50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 1800,
-    duration: 400,
-    id: "header-about",
-  });
-
-  const imageAnimation = useCustomAnimation({
-    from: {
-      transform: "translateX(50%)",
-      opacity: "0",
-    },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 2100,
-    duration: 400,
-    id: "header-about",
-  });
-
-  const sliderAnimation = useCustomAnimation({
-    from: {
-      transform: "translateY(50%)",
-      opacity: "0",
-    },
-    to: { transform: "translateY(0%)", opacity: "1" },
-    delay: 2400,
-    duration: 400,
-    id: "header-about",
-  });
+  const useItemAnimation = (transform, delay) =>
+    useCustomAnimation({
+      from: { transform, opacity: "0" },
+      to: { transform: "translateX(0%)", opacity: "1" },
+      delay,
+      duration: 400,
+      id: "header-about",
+    });
 
   return (
     <section className="header-about" id="header-about">
@@ -82,18 +53,18 @@ function HeaderAbout() {
               classHeading="header-about__heading"
               classTitle="header-about__title"
               classSubtitle="header-about__subtitle"
-              styleTitle={titleAnimation}
-              styleSubtitle={subtitleAnimation}
+              styleTitle={useItemAnimation("translateX(-50%)", 1500)}
+              styleSubtitle={useItemAnimation("translateX(-50%)", 1800)}
             />
           </animated.div>
           <animated.img
             className="header-about__img"
             alt="icon"
             src={icon}
-            style={imageAnimation}
+            style={useItemAnimation("translateX(50%)", 2100)}
           />
         </div>
-        <animated.div style={sliderAnimation}>
+        <animated.div style={useItemAnimation("translateY(50%)", 2400)}>
           <Swiper
             className="header-about__sliders"
             allowTouchMove={true}

@@ -7,37 +7,14 @@ import useCustomAnimation from "../../hooks/useScrollAnimation";
 import { animated } from "react-spring";
 
 function MainQuestions() {
-  const cardOneAnimation = useCustomAnimation({
-    from: { transform: "translateX(-50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 100,
-    duration: 800,
-    id: "main-questions",
-  });
-
-  const cardTwoAnimation = useCustomAnimation({
-    from: { transform: "translateX(-50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 400,
-    duration: 800,
-    id: "main-questions",
-  });
-
-  const cardFreeAnimation = useCustomAnimation({
-    from: { transform: "translateX(50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 1100,
-    duration: 800,
-    id: "main-questions",
-  });
-
-  const cardFourAnimation = useCustomAnimation({
-    from: { transform: "translateX(50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 1400,
-    duration: 800,
-    id: "main-questions",
-  });
+  const useItemAnimation = (transform, delay) =>
+    useCustomAnimation({
+      from: { transform, opacity: "0" },
+      to: { transform: "translateX(0%)", opacity: "1" },
+      delay,
+      duration: 800,
+      id: "main-questions",
+    });
 
   return (
     <section className="main-questions" id="main-questions">
@@ -45,7 +22,7 @@ function MainQuestions() {
         <ul className="main-questions__list">
           <animated.li
             className="main-questions__item"
-            style={cardOneAnimation}
+            style={useItemAnimation("translateX(-50%)", 100)}
           >
             <img
               src={workZone}
@@ -63,7 +40,7 @@ function MainQuestions() {
           </animated.li>
           <animated.li
             className="main-questions__item"
-            style={cardFreeAnimation}
+            style={useItemAnimation("translateX(50%)", 600)}
           >
             <img
               src={workBreak}
@@ -81,7 +58,7 @@ function MainQuestions() {
           </animated.li>
           <animated.li
             className="main-questions__item"
-            style={cardTwoAnimation}
+            style={useItemAnimation("translateX(-50%)", 1100)}
           >
             <img
               src={coffeeBreak}
@@ -99,7 +76,7 @@ function MainQuestions() {
           </animated.li>
           <animated.li
             className="main-questions__item nth-child"
-            style={cardFourAnimation}
+            style={useItemAnimation("translateX(50%)", 1400)}
           >
             <img
               src={presentation}

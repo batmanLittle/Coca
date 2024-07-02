@@ -8,53 +8,14 @@ import { animated } from "react-spring";
 import { Heading } from "../Heading/Heading";
 
 function Functions() {
-  const headingTitleAnimation = useCustomAnimation({
-    from: { transform: "translateX(-20%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 100,
-    duration: 600,
-    id: "functions",
-  });
-
-  const headingSubtitleAnimation = useCustomAnimation({
-    from: { transform: "translateX(-20%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 500,
-    duration: 600,
-    id: "functions",
-  });
-
-  const itemOneAnimation = useCustomAnimation({
-    from: { transform: "translateX(-50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 900,
-    duration: 600,
-    id: "functions",
-  });
-
-  const itemTwoAnimation = useCustomAnimation({
-    from: { transform: "translateX(-50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 1200,
-    duration: 600,
-    id: "functions",
-  });
-
-  const itemFreeAnimation = useCustomAnimation({
-    from: { transform: "translateX(50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 1500,
-    duration: 600,
-    id: "functions",
-  });
-
-  const itemFourAnimation = useCustomAnimation({
-    from: { transform: "translateX(50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 1800,
-    duration: 600,
-    id: "functions",
-  });
+  const useItemAnimation = (transform, delay) =>
+    useCustomAnimation({
+      from: { transform, opacity: "0" },
+      to: { transform: "translateX(0%)", opacity: "1" },
+      delay,
+      duration: 600,
+      id: "functions",
+    });
 
   return (
     <section className="functions" id="functions">
@@ -67,11 +28,14 @@ function Functions() {
             identity, activation, and date collaboration"
           classTitle="functions__heading-title"
           classSubtitle="functions__heading-subtitle"
-          styleTitle={headingTitleAnimation}
-          styleSubtitle={headingSubtitleAnimation}
+          styleTitle={useItemAnimation("translateX(-20%)", 200)}
+          styleSubtitle={useItemAnimation("translateX(-20%)", 500)}
         />
         <ul className="functions__list">
-          <animated.li className="functions__item" style={itemOneAnimation}>
+          <animated.li
+            className="functions__item"
+            style={useItemAnimation("translateX(-50%)", 900)}
+          >
             <img src={icon} alt="Icon" className="functions__item-img" />
             <h3 className="functions__item-title">
               Build your date fundamental
@@ -82,7 +46,10 @@ function Functions() {
               at all times.
             </p>
           </animated.li>
-          <animated.li className="functions__item" style={itemFreeAnimation}>
+          <animated.li
+            className="functions__item"
+            style={useItemAnimation("translateX(50%)", 1600)}
+          >
             <img src={icon1} alt="Icon" className="functions__item-img" />
             <h3 className="functions__item-title">Measure more effective</h3>
             <p className="functions__item-subtitle">
@@ -91,7 +58,10 @@ function Functions() {
               innovation.
             </p>
           </animated.li>
-          <animated.li className="functions__item" style={itemTwoAnimation}>
+          <animated.li
+            className="functions__item"
+            style={useItemAnimation("translateX(-50%)", 1300)}
+          >
             <img src={icon2} alt="icon" className="functions__item-img" />
             <h3 className="functions__item-title">Activate your date</h3>
             <p className="functions__item-subtitle">
@@ -100,7 +70,10 @@ function Functions() {
               between identity space to improve results.
             </p>
           </animated.li>
-          <animated.li className="functions__item" style={itemFourAnimation}>
+          <animated.li
+            className="functions__item"
+            style={useItemAnimation("translateX(50%)", 1900)}
+          >
             <img src={icon3} alt="icon" className="functions__item-img" />
             <h3 className="functions__item-title">
               Strengthen consumer privacy

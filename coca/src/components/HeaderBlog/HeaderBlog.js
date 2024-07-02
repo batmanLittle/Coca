@@ -19,7 +19,6 @@ import "swiper/css/navigation";
 function HeaderBlog() {
   const [mySwiper, setMySwiper] = useState(null);
   const [buttonPosition, setButtonPosition] = useState(false);
-  // const currentIndex = mySwiper.activeIndex;
 
   const handleNextClick = () => {
     setButtonPosition(true);
@@ -29,29 +28,14 @@ function HeaderBlog() {
     setButtonPosition(false);
   };
 
-  const titleAnimation = useCustomAnimation({
-    from: { transform: "translateX(-50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 1500,
-    duration: 500,
-    id: "header-blog",
-  });
-
-  const subtitleAnimation = useCustomAnimation({
-    from: { transform: "translateX(-50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 1800,
-    duration: 500,
-    id: "header-blog",
-  });
-
-  const swiperAnimation = useCustomAnimation({
-    from: { transform: "translateY(-20%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 2100,
-    duration: 500,
-    id: "header-blog",
-  });
+  const useItemAnimation = (transform, delay) =>
+    useCustomAnimation({
+      from: { transform, opacity: "0" },
+      to: { transform: "translateX(0%)", opacity: "1" },
+      delay,
+      duration: 500,
+      id: "header-blog",
+    });
 
   return (
     <section className="header-blog" id="header-blog">
@@ -64,10 +48,10 @@ function HeaderBlog() {
           classHeading="header-blog__heading"
           classTitle="header-blog__title"
           classSubtitle="header-blog__subtitle"
-          styleTitle={titleAnimation}
-          styleSubtitle={subtitleAnimation}
+          styleTitle={useItemAnimation("translateX(-50%)", 1500)}
+          styleSubtitle={useItemAnimation("translateX(-50%)", 1800)}
         />
-        <animated.div style={swiperAnimation}>
+        <animated.div style={useItemAnimation("translateX(-20%)", 2100)}>
           <Swiper
             spaceBetween={16}
             className="header-blog__sliders"

@@ -3,6 +3,7 @@
   display: flex;
   padding: 162px 15px 218px;
   justify-content: center;
+  overflow: hidden;
 }
 
 .articles__container {

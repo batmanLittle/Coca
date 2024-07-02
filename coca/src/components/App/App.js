@@ -36,6 +36,7 @@ function App() {
             <>
               <HeaderAbout />
               <Ideas />
+
               <Team />
               <Footer />
             </>

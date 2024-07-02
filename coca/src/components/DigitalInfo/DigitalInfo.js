@@ -7,32 +7,14 @@ import useCustomAnimation from "../../hooks/useScrollAnimation";
 import Button from "../Button/Button";
 
 function DigitalInfo() {
-  const FormAnimation = useCustomAnimation({
-    from: { transform: "translateX(-50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 2100,
-    duration: 400,
-    id: "digital-info",
-  });
-
-  const DigitalAnimation = useCustomAnimation({
-    from: { transform: "translateX(-50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 1500,
-    duration: 400,
-    id: "digital-info",
-  });
-
-  const GraphsAnimation = useCustomAnimation({
-    from: {
-      transform: "translateX(50%)",
-      opacity: "0",
-    },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 1800,
-    duration: 400,
-    id: "digital-info",
-  });
+  const useItemAnimation = (transform, delay) =>
+    useCustomAnimation({
+      from: { transform, opacity: "0" },
+      to: { transform: "translateX(0%)", opacity: "1" },
+      delay,
+      duration: 400,
+      id: "digital-info",
+    });
 
   return (
     <section className="digital-info" id="digital-info">
@@ -40,14 +22,17 @@ function DigitalInfo() {
       <Background />
       <div className="digital-info__container">
         <div className="digital-info__block">
-          <animated.div style={DigitalAnimation}>
+          <animated.div style={useItemAnimation("translateX(-50%)", 1500)}>
             <h1 className="digital-info__title">Digitally forward creative</h1>
             <p className="digital-info__subtitle">
               When it comes to interactive marketing, we've got you covered. Be
               where the world is going
             </p>
           </animated.div>
-          <animated.form className="digital-info__form" style={FormAnimation}>
+          <animated.form
+            className="digital-info__form"
+            style={useItemAnimation("translateX(-50%)", 2100)}
+          >
             <input
               type="email"
               className="digital-info__input"
@@ -56,7 +41,10 @@ function DigitalInfo() {
             <Button text={"Try for free"} />
           </animated.form>
         </div>
-        <animated.div style={GraphsAnimation} className="digital-info__img">
+        <animated.div
+          style={useItemAnimation("translateX(50%)", 1800)}
+          className="digital-info__img"
+        >
           <img className="digital-info__img" src={graphs} alt="graphs" />
         </animated.div>
       </div>

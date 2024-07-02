@@ -12,53 +12,14 @@ import graph2 from "../../images/icon-graph2.svg";
 import { Heading } from "../Heading/Heading";
 
 function Development() {
-  const titleAnimation = useCustomAnimation({
-    from: { transform: "translateX(-20%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 100,
-    duration: 600,
-    id: "development",
-  });
-
-  const subtitleAnimation = useCustomAnimation({
-    from: { transform: "translateX(-20%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 500,
-    duration: 600,
-    id: "development",
-  });
-
-  const itemOneAnimation = useCustomAnimation({
-    from: { transform: "translateX(-50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 900,
-    duration: 600,
-    id: "development",
-  });
-
-  const itemTwoAnimation = useCustomAnimation({
-    from: { transform: "translateX(-50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 1200,
-    duration: 600,
-    id: "development",
-  });
-
-  const itemFreeAnimation = useCustomAnimation({
-    from: { transform: "translateX(50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 1500,
-    duration: 600,
-    id: "development",
-  });
-
-  const itemFourAnimation = useCustomAnimation({
-    from: { transform: "translateX(50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 1800,
-    duration: 600,
-    id: "development",
-  });
+  const useItemAnimation = (transform, delay) =>
+    useCustomAnimation({
+      from: { transform, opacity: "0" },
+      to: { transform: "translateX(0%)", opacity: "1" },
+      delay,
+      duration: 600,
+      id: "development",
+    });
 
   return (
     <section className="development" id="development">
@@ -71,11 +32,14 @@ function Development() {
           classHeading="development__heading"
           classTitle="development__heading-title"
           classSubtitle="development__heading-subtitle"
-          styleTitle={titleAnimation}
-          styleSubtitle={subtitleAnimation}
+          styleTitle={useItemAnimation("translateX(-20%)", 100)}
+          styleSubtitle={useItemAnimation("translateX(-20%)", 500)}
         />
         <ul className="development__list">
-          <animated.li className="development__item" style={itemOneAnimation}>
+          <animated.li
+            className="development__item"
+            style={useItemAnimation("translateX(-50%)", 900)}
+          >
             <div className="development__item-images">
               <img className="development__item-img" src={work} alt="work" />
               <img className="development__item-icon" src={smile} alt="smile" />
@@ -92,7 +56,10 @@ function Development() {
             </div>
           </animated.li>
 
-          <animated.li className="development__item" style={itemFreeAnimation}>
+          <animated.li
+            className="development__item"
+            style={useItemAnimation("translateX(50%)", 1500)}
+          >
             <div className="development__item-images">
               <img className="development__item-img" src={team} alt="team" />
               <img className="development__item-icon" src={graph} alt="graph" />
@@ -109,7 +76,10 @@ function Development() {
             </div>
           </animated.li>
 
-          <animated.li className="development__item" style={itemTwoAnimation}>
+          <animated.li
+            className="development__item"
+            style={useItemAnimation("translateX(-50%)", 1200)}
+          >
             <div className="development__item-images">
               <img
                 className="development__item-img"
@@ -130,7 +100,10 @@ function Development() {
             </div>
           </animated.li>
 
-          <animated.li className="development__item" style={itemFourAnimation}>
+          <animated.li
+            className="development__item"
+            style={useItemAnimation("translateX(50%)", 1800)}
+          >
             <div className="development__item-images">
               <img className="development__item-img" src={chill} alt="chill" />
               <img

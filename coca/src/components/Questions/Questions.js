@@ -6,20 +6,14 @@ import useCustomAnimation from "../../hooks/useScrollAnimation";
 import { animated } from "react-spring";
 
 function Questions() {
-  const titleAnimation = useCustomAnimation({
-    from: { transform: "translateY(50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 500,
-    duration: 300,
-    id: "questions",
-  });
-  const subtitleAnimation = useCustomAnimation({
-    from: { transform: "translateY(300%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 800,
-    duration: 300,
-    id: "questions",
-  });
+  const useTextAnimation = (transform, delay) =>
+    useCustomAnimation({
+      from: { transform, opacity: "0" },
+      to: { transform: "translateX(0%)", opacity: "1" },
+      delay,
+      duration: 300,
+      id: "questions",
+    });
 
   const useItemAnimation = (delay) =>
     useCustomAnimation({
@@ -39,8 +33,8 @@ function Questions() {
           classHeading="news__heading"
           classTitle="news__heading-title"
           classSubtitle="news__heading-subtitle"
-          styleTitle={titleAnimation}
-          styleSubtitle={subtitleAnimation}
+          styleTitle={useTextAnimation("translateY(50%)", 500)}
+          styleSubtitle={useTextAnimation("translateY(300%)", 800)}
         />
         <ul className="questions__list">
           <animated.li

@@ -19,49 +19,14 @@ import { useEffect } from "react";
 function Footer() {
   const location = useLocation();
 
-  useEffect(() => {
-    console.log(location);
-  }, [location]);
-
-  const titleAnimation = useCustomAnimation({
-    from: { transform: "translateX(-20%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 100,
-    duration: 400,
-    id: "footer",
-  });
-
-  const subtitleAnimation = useCustomAnimation({
-    from: { transform: "translateX(-20%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 500,
-    duration: 400,
-    id: "footer",
-  });
-
-  const buttonAnimation = useCustomAnimation({
-    from: { transform: "translateX(40%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 800,
-    duration: 400,
-    id: "footer",
-  });
-
-  const logoAnimation = useCustomAnimation({
-    from: { transform: "translateY(100%)", opacity: "0" },
-    to: { transform: "translateY(0%)", opacity: "1" },
-    delay: 1100,
-    duration: 400,
-    id: "footer",
-  });
-
-  const bottomTextAnimation = useCustomAnimation({
-    from: { transform: "translateY(100%)", opacity: "0" },
-    to: { transform: "translateY(0%)", opacity: "1" },
-    delay: 1300,
-    duration: 400,
-    id: "footer",
-  });
+  const useItemAnimation = (transform, delay) =>
+    useCustomAnimation({
+      from: { transform, opacity: "0" },
+      to: { transform: "translateX(0%)", opacity: "1" },
+      delay,
+      duration: 400,
+      id: "footer",
+    });
 
   const useLinkAnimation = (delay) =>
     useCustomAnimation({
@@ -87,7 +52,7 @@ function Footer() {
           <div className="footer__heading">
             <animated.h2
               className="footer__heading-title"
-              style={titleAnimation}
+              style={useItemAnimation("translateX(-20%)", 100)}
             >
               Think beyond the wave
             </animated.h2>
@@ -97,7 +62,7 @@ function Footer() {
                   ? "footer__heading-subtitle"
                   : "footer__heading-subtitle_grey"
               }
-              style={subtitleAnimation}
+              style={useItemAnimation("translateX(-20%)", 500)}
             >
               Ask about Sans products, pricing, implementation, or anything
               else. Our highly trained reps are standing by, ready to help
@@ -105,7 +70,7 @@ function Footer() {
           </div>
           <Button
             text={"Try for free"}
-            styleButton={buttonAnimation}
+            styleButton={useItemAnimation("translateX(40%)", 800)}
             classButton={
               location.pathname === "/" || location.pathname === "/blog"
                 ? null
@@ -118,7 +83,7 @@ function Footer() {
           <div className="footer__bottom-info">
             <div className="footer__bottom-intro">
               <animated.img
-                style={logoAnimation}
+                style={useItemAnimation("translateY(100%)", 1100)}
                 className="footer__bottom-logo"
                 src={
                   location.pathname === "/" || location.pathname === "/blog"
@@ -129,7 +94,7 @@ function Footer() {
               />
               <animated.p
                 className="footer__bottom-text"
-                style={bottomTextAnimation}
+                style={useItemAnimation("translateY(100%)", 1300)}
               >
                 We built an elegant solution. Our team created a fully
                 integrated sales and marketing solution for SMBs

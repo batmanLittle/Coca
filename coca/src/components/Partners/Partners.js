@@ -12,21 +12,14 @@ import { animated } from "react-spring";
 import { Heading } from "../Heading/Heading";
 
 function Partners() {
-  const titleAnimation = useCustomAnimation({
-    from: { transform: "translateX(-20%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 100,
-    duration: 300,
-    id: "partners",
-  });
-
-  const subtitleAnimation = useCustomAnimation({
-    from: { transform: "translateX(20%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 1900,
-    duration: 200,
-    id: "partners",
-  });
+  const useItemAnimation = (transform, delay, duration) =>
+    useCustomAnimation({
+      from: { transform, opacity: "0" },
+      to: { transform: "translateX(0%)", opacity: "1" },
+      delay,
+      duration,
+      id: "partners",
+    });
 
   const useItemRightAnimation = (delay) =>
     useCustomAnimation({
@@ -55,8 +48,8 @@ function Partners() {
           classHeading="partners__heading"
           classTitle="partners__heading-title"
           classSubtitle="partners__heading-subtitle"
-          styleTitle={titleAnimation}
-          styleSubtitle={subtitleAnimation}
+          styleTitle={useItemAnimation("translateX(-20%)", 100, 300)}
+          styleSubtitle={useItemAnimation("translateX(20%)", 1900, 200)}
         />
         <ul className="partners__list">
           <li className="partners__item">

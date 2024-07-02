@@ -1,24 +1,16 @@
 import "./Ideas.css";
 import { Heading } from "../Heading/Heading";
-import { animated } from "react-spring";
 import useCustomAnimation from "../../hooks/useScrollAnimation";
 
 function Ideas() {
-  const titleAnimation = useCustomAnimation({
-    from: { transform: "translateX(-50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 200,
-    duration: 400,
-    id: "ideas",
-  });
-
-  const subtitleAnimation = useCustomAnimation({
-    from: { transform: "translateX(50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 500,
-    duration: 400,
-    id: "ideas",
-  });
+  const useItemAnimation = (transform, delay) =>
+    useCustomAnimation({
+      from: { transform, opacity: "0" },
+      to: { transform: "translateX(0%)", opacity: "1" },
+      delay,
+      duration: 400,
+      id: "ideas",
+    });
 
   return (
     <section className="ideas" id="ideas">
@@ -29,8 +21,8 @@ function Ideas() {
           classTitle="ideas__heading-title"
           classSubtitle="ideas__heading-subtitle"
           classHeading="ideas__heading"
-          styleTitle={titleAnimation}
-          styleSubtitle={subtitleAnimation}
+          styleTitle={useItemAnimation("translateX(-50%)", 200)}
+          styleSubtitle={useItemAnimation("translateX(50%)", 500)}
         />
       </div>
     </section>

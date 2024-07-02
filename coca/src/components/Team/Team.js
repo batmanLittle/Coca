@@ -21,45 +21,14 @@ import useCustomAnimation from "../../hooks/useScrollAnimation";
 function Team() {
   const [mySwiper, setMySwiper] = useState(null);
 
-  const titleAnimation = useCustomAnimation({
-    from: { transform: "translateX(-50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 100,
-    duration: 400,
-    id: "team",
-  });
-
-  const subtitleAnimation = useCustomAnimation({
-    from: { transform: "translateX(-50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 400,
-    duration: 400,
-    id: "team",
-  });
-
-  const sliderAnimation = useCustomAnimation({
-    from: { transform: "translateY(50%)", opacity: "0" },
-    to: { transform: "translateY(0%)", opacity: "1" },
-    delay: 700,
-    duration: 400,
-    id: "team",
-  });
-
-  const titleBottomAnimation = useCustomAnimation({
-    from: { transform: "translateX(-50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 1000,
-    duration: 400,
-    id: "team",
-  });
-
-  const subtitleBottomAnimation = useCustomAnimation({
-    from: { transform: "translateX(50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 1300,
-    duration: 400,
-    id: "team",
-  });
+  const useItemAnimation = (transform, delay) =>
+    useCustomAnimation({
+      from: { transform, opacity: "0" },
+      to: { transform: "translateX(0%)", opacity: "1" },
+      delay,
+      duration: 400,
+      id: "team",
+    });
 
   return (
     <section className="team" id="team">
@@ -71,10 +40,10 @@ function Team() {
           classTitle="team__heading-title"
           classSubtitle="team__heading-subtitle"
           classHeading="team__heading"
-          styleTitle={titleAnimation}
-          styleSubtitle={subtitleAnimation}
+          styleTitle={useItemAnimation("translateX(-50%)", 100)}
+          styleSubtitle={useItemAnimation("translateX(-50%)", 400)}
         />
-        <animated.div style={sliderAnimation}>
+        <animated.div style={useItemAnimation("translateY(50%)", 700)}>
           <Swiper
             onInit={setMySwiper}
             spaceBetween={16}
@@ -196,12 +165,12 @@ function Team() {
             classTitle="team__heading-bottom_title"
             classSubtitle="team__heading-bottom_subtitle"
             classHeading="team__heading-bottom"
-            styleTitle={titleBottomAnimation}
-            styleSubtitle={subtitleBottomAnimation}
+            styleTitle={useItemAnimation("translateX(-50%)", 1000)}
+            styleSubtitle={useItemAnimation("translateX(50%)", 1300)}
           />
           <animated.p
             className="team__open-position"
-            style={subtitleBottomAnimation}
+            style={useItemAnimation("translateX(50%)", 1300)}
           >
             See Open Position -&gt;
           </animated.p>

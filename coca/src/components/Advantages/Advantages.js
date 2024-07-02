@@ -7,42 +7,22 @@ import { animated } from "react-spring";
 import { Heading } from "../Heading/Heading";
 
 function Advantages() {
-  const imgAnimation = useCustomAnimation({
-    from: { transform: "translateX(-50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 100,
-    duration: 600,
-    id: "advantages",
-  });
-
-  const titleAnimation = useCustomAnimation({
-    from: { transform: "translateX(50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 1200,
-    duration: 600,
-    id: "advantages",
-  });
-
-  const subtitleAnimation = useCustomAnimation({
-    from: { transform: "translateX(50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 900,
-    duration: 600,
-    id: "advantages",
-  });
-
-  const listAnimation = useCustomAnimation({
-    from: { transform: "translateX(50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 500,
-    duration: 600,
-    id: "advantages",
-  });
+  const useItemAnimation = (transform, delay) =>
+    useCustomAnimation({
+      from: { transform, opacity: "0" },
+      to: { transform: "translateX(0%)", opacity: "1" },
+      delay,
+      duration: 600,
+      id: "advantages",
+    });
 
   return (
     <section className="advantages" id="advantages">
       <div className="advantages__container">
-        <animated.div className="advantages__img" style={imgAnimation}>
+        <animated.div
+          className="advantages__img"
+          style={useItemAnimation("translateX(-50%)", 100)}
+        >
           <img
             src={imageWork}
             alt="working on a laptop"
@@ -61,10 +41,13 @@ function Advantages() {
             classHeading="advantages__heading"
             classTitle="advantages__heading-title"
             classSubtitle="advantages__heading-subtitle"
-            styleTitle={titleAnimation}
-            styleSubtitle={subtitleAnimation}
+            styleTitle={useItemAnimation("translateX(50%)", 1200)}
+            styleSubtitle={useItemAnimation("translateX(50%)", 900)}
           />
-          <animated.ul className="advantages__list" style={listAnimation}>
+          <animated.ul
+            className="advantages__list"
+            style={useItemAnimation("translateX(50%)", 500)}
+          >
             <li className="advantages__item">
               <img src={icon} alt="icon" className="advantages__item-icon" />
               <p className="advantages__item-text">

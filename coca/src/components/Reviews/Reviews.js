@@ -18,29 +18,14 @@ import "swiper/css/navigation";
 function Reviews() {
   const [mySwiper, setMySwiper] = useState(null);
 
-  const titleAnimation = useCustomAnimation({
-    from: { transform: "translateX(-60%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 100,
-    duration: 400,
-    id: "reviews",
-  });
-
-  const subtitleAnimation = useCustomAnimation({
-    from: { transform: "translateX(-100%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 500,
-    duration: 400,
-    id: "reviews",
-  });
-
-  const swiperAnimation = useCustomAnimation({
-    from: { transform: "translateY(-20%)", opacity: "0" },
-    to: { transform: "translateY(0%)", opacity: "1" },
-    delay: 900,
-    duration: 400,
-    id: "reviews",
-  });
+  const useItemAnimation = (transform, delay) =>
+    useCustomAnimation({
+      from: { transform, opacity: "0" },
+      to: { transform: "translateX(0%)", opacity: "1" },
+      delay,
+      duration: 400,
+      id: "reviews",
+    });
 
   return (
     <section className="reviews" id="reviews">
@@ -52,10 +37,10 @@ function Reviews() {
           classHeading="reviews__heading"
           classTitle="reviews__heading-title"
           classSubtitle="reviews__heading-subtitle"
-          styleTitle={titleAnimation}
-          styleSubtitle={subtitleAnimation}
+          styleTitle={useItemAnimation("translateX(-60%)", 100)}
+          styleSubtitle={useItemAnimation("translateX(-100%)", 500)}
         />
-        <animated.div style={swiperAnimation}>
+        <animated.div style={useItemAnimation("translateX(-20%)", 900)}>
           <img className="reviews__img" src={quotes} alt="quotes" />
           <Swiper
             className="reviews__sliders"

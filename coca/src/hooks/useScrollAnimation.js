@@ -22,8 +22,8 @@ const useCustomAnimation = (options) => {
         const rect = element.getBoundingClientRect();
         const isElementVisible =
           rect.top <=
-          (window.innerHeight * 0.8 ||
-            document.documentElement.clientHeight * 0.8);
+          (window.innerHeight * 0.4 ||
+            document.documentElement.clientHeight * 0.4);
         if (isElementVisible && !isVisible) {
           setIsVisible(true);
         }

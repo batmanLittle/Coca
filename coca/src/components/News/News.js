@@ -16,29 +16,14 @@ import "swiper/css/navigation";
 function News() {
   const [mySwiper, setMySwiper] = useState(null);
 
-  const titleAnimation = useCustomAnimation({
-    from: { transform: "translateY(-100%)", opacity: "0" },
-    to: { transform: "translateY(0%)", opacity: "1" },
-    delay: 100,
-    duration: 400,
-    id: "news",
-  });
-
-  const subtitleAnimation = useCustomAnimation({
-    from: { transform: "translateY(-100%)", opacity: "0" },
-    to: { transform: "translateY(0%)", opacity: "1" },
-    delay: 500,
-    duration: 400,
-    id: "news",
-  });
-
-  const swiperAnimation = useCustomAnimation({
-    from: { transform: "translateY(-20%)", opacity: "0" },
-    to: { transform: "translateY(0%)", opacity: "1" },
-    delay: 900,
-    duration: 400,
-    id: "news",
-  });
+  const useItemAnimation = (transform, delay) =>
+    useCustomAnimation({
+      from: { transform, opacity: "0" },
+      to: { transform: "translateX(0%)", opacity: "1" },
+      delay,
+      duration: 400,
+      id: "news",
+    });
 
   return (
     <section className="news" id="news">
@@ -49,10 +34,10 @@ function News() {
           classHeading="news__heading"
           classTitle="news__heading-title"
           classSubtitle="news__heading-subtitle"
-          styleTitle={titleAnimation}
-          styleSubtitle={subtitleAnimation}
+          styleTitle={useItemAnimation("translateY(-100%)", 100)}
+          styleSubtitle={useItemAnimation("translateY(-100%)", 500)}
         />
-        <animated.div style={swiperAnimation}>
+        <animated.div style={useItemAnimation("translateY(-20%)", 900)}>
           <Swiper
             spaceBetween={16}
             className="news__sliders"

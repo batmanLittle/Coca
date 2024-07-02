@@ -4,6 +4,7 @@
   padding: 120px 15px;
   background-color: #1d1e25;
   justify-content: center;
+  overflow: hidden;
 }
 
 .main-questions__container {

@@ -19,37 +19,14 @@ import { animated } from "react-spring";
 function Articles() {
   const [mySwiper, setMySwiper] = useState(null);
 
-  const titleAnimation = useCustomAnimation({
-    from: { transform: "translateX(-50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 1500,
-    duration: 500,
-    id: "articles",
-  });
-
-  const subtitleAnimation = useCustomAnimation({
-    from: { transform: "translateX(-50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 1800,
-    duration: 500,
-    id: "articles",
-  });
-
-  const buttonAnimation = useCustomAnimation({
-    from: { transform: "translateX(50%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 2100,
-    duration: 500,
-    id: "articles",
-  });
-
-  const swiperAnimation = useCustomAnimation({
-    from: { transform: "translateY(-20%)", opacity: "0" },
-    to: { transform: "translateX(0%)", opacity: "1" },
-    delay: 2500,
-    duration: 500,
-    id: "articles",
-  });
+  const useItemAnimation = (transform, delay) =>
+    useCustomAnimation({
+      from: { transform, opacity: "0" },
+      to: { transform: "translateX(0%)", opacity: "1" },
+      delay,
+      duration: 500,
+      id: "articles",
+    });
 
   return (
     <section className="articles" id="articles">
@@ -61,10 +38,13 @@ function Articles() {
             classHeading="articles__heading"
             classTitle="articles__heading-title"
             classSubtitle="articles__heading-subtitle"
-            styleTitle={titleAnimation}
-            styleSubtitle={subtitleAnimation}
+            styleTitle={useItemAnimation("translateX(-50%)", 1500)}
+            styleSubtitle={useItemAnimation("translateX(-50%)", 1800)}
           />
-          <animated.div className="articles__buttons" style={buttonAnimation}>
+          <animated.div
+            className="articles__buttons"
+            style={useItemAnimation("translateX(50%)", 2100)}
+          >
             <button
               className="articles__button"
               onClick={() => {
@@ -99,7 +79,7 @@ function Articles() {
             </button>
           </animated.div>
         </div>
-        <animated.div style={swiperAnimation}>
+        <animated.div style={useItemAnimation("translateY(-20%)", 2500)}>
           <Swiper
             spaceBetween={20}
             className="articles__sliders"
