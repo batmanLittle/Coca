@@ -11,6 +11,9 @@ import MainQuestions from "../MainQuestions/MainQuestions";
 import Articles from "../Articles/Articles";
 import PricingPlan from "../PricingPlan/PricingPlan";
 import Questions from "../Questions/Questions";
+import ContactUs from "../ContactUs/ContactUs";
+import Partners from "../Partners/Partners";
+import ContactForm from "../ContactForm/ContactForm";
 
 function App() {
   return (
@@ -57,6 +60,17 @@ function App() {
             <>
               <PricingPlan />
               <Questions />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="//contact-us"
+          element={
+            <>
+              <ContactUs />
+              <Partners />
+              <ContactForm />
               <Footer />
             </>
           }

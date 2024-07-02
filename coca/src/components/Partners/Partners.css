@@ -60,6 +60,6 @@
   }
   .partners__list {
     gap: 15px;
-    max-width: 263px;
+    max-width: 80%;
   }
 }

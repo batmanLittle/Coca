@@ -29,6 +29,30 @@ function HeaderBlog() {
     setButtonPosition(false);
   };
 
+  const titleAnimation = useCustomAnimation({
+    from: { transform: "translateX(-50%)", opacity: "0" },
+    to: { transform: "translateX(0%)", opacity: "1" },
+    delay: 1500,
+    duration: 500,
+    id: "header-blog",
+  });
+
+  const subtitleAnimation = useCustomAnimation({
+    from: { transform: "translateX(-50%)", opacity: "0" },
+    to: { transform: "translateX(0%)", opacity: "1" },
+    delay: 1800,
+    duration: 500,
+    id: "header-blog",
+  });
+
+  const swiperAnimation = useCustomAnimation({
+    from: { transform: "translateY(-20%)", opacity: "0" },
+    to: { transform: "translateX(0%)", opacity: "1" },
+    delay: 2100,
+    duration: 500,
+    id: "header-blog",
+  });
+
   return (
     <section className="header-blog" id="header-blog">
       <Header />
@@ -40,118 +64,120 @@ function HeaderBlog() {
           classHeading="header-blog__heading"
           classTitle="header-blog__title"
           classSubtitle="header-blog__subtitle"
-          //   styleTitle={titleAnimation}
-          //   styleSubtitle={subtitleAnimation}
+          styleTitle={titleAnimation}
+          styleSubtitle={subtitleAnimation}
         />
-        <Swiper
-          spaceBetween={16}
-          className="header-blog__sliders"
-          slidesPerView={1.5}
-          onInit={setMySwiper}
-          modules={[Virtual, Navigation, Pagination]}
-          allowTouchMove={false}
-          breakpoints={{
-            1050: {
-              slidesPerView: 2.5,
-              spaceBetween: 32,
-            },
-            751: {
-              slidesPerView: 2,
-              spaceBetween: 32,
-            },
-            651: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-          }}
-        >
-          <div
-            className={
-              buttonPosition
-                ? "header-blog__button_active"
-                : "header-blog__button"
-            }
+        <animated.div style={swiperAnimation}>
+          <Swiper
+            spaceBetween={16}
+            className="header-blog__sliders"
+            slidesPerView={1.5}
+            onInit={setMySwiper}
+            modules={[Virtual, Navigation, Pagination]}
+            allowTouchMove={false}
+            breakpoints={{
+              1050: {
+                slidesPerView: 2.5,
+                spaceBetween: 32,
+              },
+              751: {
+                slidesPerView: 2,
+                spaceBetween: 32,
+              },
+              651: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+            }}
           >
-            <img
-              className="header-blog__button-img"
-              alt="button"
-              src={button}
-            />
             <div
-              className="header-blog__button-prev"
-              onClick={() => {
-                if (mySwiper.activeIndex === 0) {
-                  mySwiper.slideToLoop(null);
-                } else {
-                  mySwiper.slidePrev();
-                }
-                handlePrevClick();
-              }}
-            ></div>
-            <div
-              className="header-blog__button-next"
-              onClick={() => {
-                if (mySwiper.activeIndex === 2) {
-                  mySwiper.slideToLoop(2);
-                } else {
-                  mySwiper.slideNext();
-                }
-                handleNextClick();
-              }}
-            ></div>
-          </div>
-
-          <SwiperSlide className="header-blog__slider">
-            <img
-              className="header-blog__slider-img"
-              alt="work"
-              src={workBreak}
-            />
-            <div className="header-blog__slider-text">
-              <p className="header-blog__slider-data">
-                Published in Insight Jan 30, 2021
-              </p>
-              <p className="header-blog__slider-title">
-                Practice making User Flow
-              </p>
-              <p className="header-blog__slider-subtitle">
-                In this article, we'll cover how to create user flows
-              </p>
+              className={
+                buttonPosition
+                  ? "header-blog__button_active"
+                  : "header-blog__button"
+              }
+            >
+              <img
+                className="header-blog__button-img"
+                alt="button"
+                src={button}
+              />
+              <div
+                className="header-blog__button-prev"
+                onClick={() => {
+                  if (mySwiper.activeIndex === 0) {
+                    mySwiper.slideToLoop(null);
+                  } else {
+                    mySwiper.slidePrev();
+                  }
+                  handlePrevClick();
+                }}
+              ></div>
+              <div
+                className="header-blog__button-next"
+                onClick={() => {
+                  if (mySwiper.activeIndex === 2) {
+                    mySwiper.slideToLoop(2);
+                  } else {
+                    mySwiper.slideNext();
+                  }
+                  handleNextClick();
+                }}
+              ></div>
             </div>
-          </SwiperSlide>
-          <SwiperSlide className="header-blog__slider">
-            <img className="header-blog__slider-img" alt="work" src={work} />
-            <div className="header-blog__slider-text">
-              <div className="header-blog__slider-text_header">
+
+            <SwiperSlide className="header-blog__slider">
+              <img
+                className="header-blog__slider-img"
+                alt="work"
+                src={workBreak}
+              />
+              <div className="header-blog__slider-text">
                 <p className="header-blog__slider-data">
                   Published in Insight Jan 30, 2021
                 </p>
-                <p className="header-blog__slider-data">by : Albert Sans</p>
+                <p className="header-blog__slider-title">
+                  Practice making User Flow
+                </p>
+                <p className="header-blog__slider-subtitle">
+                  In this article, we'll cover how to create user flows
+                </p>
               </div>
-              <p className="header-blog__slider-title">
-                Overview of the Design Principles
-              </p>
-              <p className="header-blog__slider-subtitle">
-                What are Design Principles?… To understand design principles, we
-                first discuss the principles.
-              </p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="header-blog__slider">
-            <img className="header-blog__slider-img" alt="work" src={team} />
-            <div className="header-blog__slider-text">
-              <p className="header-blog__slider-data">
-                Published in Insight Jan 30, 2021
-              </p>
-              <p className="header-blog__slider-title">
-                Using Grid in website design
-              </p>
-              <p className="header-blog__slider-subtitle">
-                Andi: "What's the grid like?" Toni: “Like below…”
-              </p>
-            </div>
-          </SwiperSlide>
-        </Swiper>
+            </SwiperSlide>
+            <SwiperSlide className="header-blog__slider">
+              <img className="header-blog__slider-img" alt="work" src={work} />
+              <div className="header-blog__slider-text">
+                <div className="header-blog__slider-text_header">
+                  <p className="header-blog__slider-data">
+                    Published in Insight Jan 30, 2021
+                  </p>
+                  <p className="header-blog__slider-data">by : Albert Sans</p>
+                </div>
+                <p className="header-blog__slider-title">
+                  Overview of the Design Principles
+                </p>
+                <p className="header-blog__slider-subtitle">
+                  What are Design Principles?… To understand design principles,
+                  we first discuss the principles.
+                </p>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className="header-blog__slider">
+              <img className="header-blog__slider-img" alt="work" src={team} />
+              <div className="header-blog__slider-text">
+                <p className="header-blog__slider-data">
+                  Published in Insight Jan 30, 2021
+                </p>
+                <p className="header-blog__slider-title">
+                  Using Grid in website design
+                </p>
+                <p className="header-blog__slider-subtitle">
+                  Andi: "What's the grid like?" Toni: “Like below…”
+                </p>
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </animated.div>
       </div>
     </section>
   );

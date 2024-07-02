@@ -3,13 +3,50 @@ import coffeeBreak from "../../images/coffee-break.svg";
 import presentation from "../../images/presentation.svg";
 import workBreak from "../../images/work-break-MainQuestions.svg";
 import workZone from "../../images/work-zone.svg";
+import useCustomAnimation from "../../hooks/useScrollAnimation";
+import { animated } from "react-spring";
 
 function MainQuestions() {
+  const cardOneAnimation = useCustomAnimation({
+    from: { transform: "translateX(-50%)", opacity: "0" },
+    to: { transform: "translateX(0%)", opacity: "1" },
+    delay: 100,
+    duration: 800,
+    id: "main-questions",
+  });
+
+  const cardTwoAnimation = useCustomAnimation({
+    from: { transform: "translateX(-50%)", opacity: "0" },
+    to: { transform: "translateX(0%)", opacity: "1" },
+    delay: 400,
+    duration: 800,
+    id: "main-questions",
+  });
+
+  const cardFreeAnimation = useCustomAnimation({
+    from: { transform: "translateX(50%)", opacity: "0" },
+    to: { transform: "translateX(0%)", opacity: "1" },
+    delay: 1100,
+    duration: 800,
+    id: "main-questions",
+  });
+
+  const cardFourAnimation = useCustomAnimation({
+    from: { transform: "translateX(50%)", opacity: "0" },
+    to: { transform: "translateX(0%)", opacity: "1" },
+    delay: 1400,
+    duration: 800,
+    id: "main-questions",
+  });
+
   return (
-    <section className="main-questions">
+    <section className="main-questions" id="main-questions">
       <div className="main-questions__container">
         <ul className="main-questions__list">
-          <li className="main-questions__item">
+          <animated.li
+            className="main-questions__item"
+            style={cardOneAnimation}
+          >
             <img
               src={workZone}
               alt="work-zone"
@@ -23,8 +60,11 @@ function MainQuestions() {
               all in one. While you are probably familiar with all of these,
               they are usually entirely separate tools.
             </p>
-          </li>
-          <li className="main-questions__item">
+          </animated.li>
+          <animated.li
+            className="main-questions__item"
+            style={cardFreeAnimation}
+          >
             <img
               src={workBreak}
               alt="work-break"
@@ -38,8 +78,11 @@ function MainQuestions() {
               all in one. While you are probably familiar with all of these,
               they are usually entirely separate tools.
             </p>
-          </li>
-          <li className="main-questions__item">
+          </animated.li>
+          <animated.li
+            className="main-questions__item"
+            style={cardTwoAnimation}
+          >
             <img
               src={coffeeBreak}
               alt="coffee-break"
@@ -53,8 +96,11 @@ function MainQuestions() {
               all in one. While you are probably familiar with all of these,
               they are usually entirely separate tools.
             </p>
-          </li>
-          <li className="main-questions__item nth-child">
+          </animated.li>
+          <animated.li
+            className="main-questions__item nth-child"
+            style={cardFourAnimation}
+          >
             <img
               src={presentation}
               alt="presentation"
@@ -68,7 +114,7 @@ function MainQuestions() {
               all in one. While you are probably familiar with all of these,
               they are usually entirely separate tools.
             </p>
-          </li>
+          </animated.li>
         </ul>
       </div>
     </section>

@@ -33,6 +33,10 @@
   color: var(--black-color);
 }
 
+.mobile-menu__link_active {
+  font-weight: bold;
+}
+
 @media screen and (max-width: 700px) {
   .mobile-menu {
     display: flex;

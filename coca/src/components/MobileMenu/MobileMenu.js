@@ -1,34 +1,69 @@
 import "./MobileMenu.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function MobileMenu() {
   return (
     <div className="mobile-menu">
       <ul className="mobile-menu__list">
         <li className="mobile-menu__item">
-          <Link to="#" className="mobile-menu__link">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `header__link ${
+                isActive ? "mobile-menu__link_active" : "mobile-menu__link"
+              }`
+            }
+          >
             Home
-          </Link>
+          </NavLink>
         </li>
         <li className="mobile-menu__item">
-          <Link to="#" className="mobile-menu__link">
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              `header__link ${
+                isActive ? "mobile-menu__link_active" : "mobile-menu__link"
+              }`
+            }
+          >
             About
-          </Link>
+          </NavLink>
         </li>
         <li className="mobile-menu__item">
-          <Link to="#" className="mobile-menu__link">
+          <NavLink
+            to="/blog"
+            className={({ isActive }) =>
+              `header__link ${
+                isActive ? "mobile-menu__link_active" : "mobile-menu__link"
+              }`
+            }
+          >
             Blog
-          </Link>
+          </NavLink>
         </li>
         <li className="mobile-menu__item">
-          <Link to="#" className="mobile-menu__link">
+          <NavLink
+            to="/pricing"
+            className={({ isActive }) =>
+              `header__link ${
+                isActive ? "mobile-menu__link_active" : "mobile-menu__link"
+              }`
+            }
+          >
             Pricing
-          </Link>
+          </NavLink>
         </li>
         <li className="mobile-menu__item">
-          <Link to="#" className="mobile-menu__link">
+          <NavLink
+            to="/contact-us"
+            className={({ isActive }) =>
+              `header__link ${
+                isActive ? "mobile-menu__link_active" : "mobile-menu__link"
+              }`
+            }
+          >
             Contact Us
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </div>

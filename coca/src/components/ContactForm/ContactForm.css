@@ -1,0 +1,137 @@
+.contact-form{
+    width: 100%;
+    display: flex;
+    padding: 120px 15px 160px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.contact-form__img{
+position: absolute;
+top:120px;
+right: 0px;
+
+}
+
+.contact-form__container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    z-index: 5;
+}
+
+.contact-form__form{
+    padding: 56px 48px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white-color);
+    border: 1px solid var(--grey-color);
+}
+
+.contact-form__title{
+    margin-bottom: 20px;
+    font-family: Inter;
+font-size: 36px;
+font-style: normal;
+font-weight: 600;
+line-height: 44px; /* 122.222% */
+letter-spacing: -0.72px;
+}
+
+.contact-form__subtitle{
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    color: var(--grey-color);
+    margin-bottom: 24px;
+}
+
+.contact-form__span{
+   color: #1463FF; 
+}
+
+.contact-form__name{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    width: 100%;
+    gap:32px;
+}
+
+.contact-form__label{
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; 
+    width: 100%;
+
+}
+
+.contact-form__input,.contact-form__input-message{
+    width: 100%;
+    max-height: 44px;
+    border-radius: 8px;
+    border: 1px solid var(--grey-color);
+    padding: 10px 14px;
+    margin-top: 6px;
+    margin-bottom: 24px;
+}
+
+.contact-form__input:placeholder{
+    font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px;
+color: var(--grey-color);
+}
+
+.contact-form__input-message{
+    height: 134px;
+   max-height: 134px;
+   height: 100%;
+   margin-bottom: 0px;
+}
+
+.contact-form__block-message{
+    height: 160px;
+    margin-bottom: 32px;
+}
+
+@media screen and (max-width: 600px){
+    .contact-form{
+        padding: 56px 15px 80px;
+    }
+
+        .contact-form__form{
+        padding: 24px ;
+        width: 100%;
+    }
+    
+    .contact-form__title{
+        margin-bottom: 12px;
+    font-size: 18px;
+    line-height: 26px; 
+    letter-spacing: 0px;
+    }
+    
+    .contact-form__subtitle{
+        font-size: 14px;
+        line-height: 20px;
+    }
+    
+    .contact-form__name{
+        flex-direction: column;
+    }
+
+    .contact-form__img{
+        display: none;
+        }
+        .contact-form__name{
+            gap:0px;
+        }
+}
