@@ -19,6 +19,4 @@
 
 ## _Ссылки:_
 
-- [Сайт с FrontEnd](https://batmanlittle.github.io/coca/)
-
 - [Макеты в Figma ](https://www.figma.com/design/ugDsET9AfdwJMCQ4qf2Qfg/Coca---Digital-Marketing-Website?node-id=134-411)

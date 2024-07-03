@@ -1,7 +1,6 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "https://batmanlittle.github.io/Coca/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -13,7 +12,8 @@
     "react-scripts": "5.0.1",
     "react-spring": "^9.7.3",
     "swiper": "^11.1.4",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "gh-pages": "^6.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -40,8 +40,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages": "^6.1.1"
   }
 }

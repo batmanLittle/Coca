@@ -66,7 +66,7 @@ function App() {
           }
         />
         <Route
-          path="//contact-us"
+          path="/contact-us"
           element={
             <>
               <ContactUs />
