@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Coca/static/css/main.619c7695.css",
-    "main.js": "/Coca/static/js/main.3ccf7f64.js",
+    "main.js": "/Coca/static/js/main.55bed7bf.js",
     "static/js/453.ed3810f9.chunk.js": "/Coca/static/js/453.ed3810f9.chunk.js",
     "static/media/work-zone.svg": "/Coca/static/media/work-zone.7011d33616729f89fe1d669cdcffdd46.svg",
     "static/media/work-break-MainQuestions.svg": "/Coca/static/media/work-break-MainQuestions.b7a92f95e0e8cff5063a6efa15d071f3.svg",
@@ -78,11 +78,11 @@
     "static/media/icon-button.svg": "/Coca/static/media/icon-button.94248dfd456cb0a90be5933219d197e1.svg",
     "static/media/quotes.svg": "/Coca/static/media/quotes.365c56dc9f42b023f03968b9956b364b.svg",
     "main.619c7695.css.map": "/Coca/static/css/main.619c7695.css.map",
-    "main.3ccf7f64.js.map": "/Coca/static/js/main.3ccf7f64.js.map",
+    "main.55bed7bf.js.map": "/Coca/static/js/main.55bed7bf.js.map",
     "453.ed3810f9.chunk.js.map": "/Coca/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.619c7695.css",
-    "static/js/main.3ccf7f64.js"
+    "static/js/main.55bed7bf.js"
   ]
 }
